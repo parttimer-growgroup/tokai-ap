@@ -1,0 +1,210 @@
+/*
+---
+name: ボックス_通常
+category: Components
+---
+```types.html
+<div class="c-box">
+            <div class="c-box__block">
+              <div class="c-box__content">
+                <div class="c-heading is-xxs is-color-primary is-icon is-bottom"><i class="fa fa-circle-o" aria-hidden="true"></i>見出しレベル5</div>
+                <p>ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト</p>
+              </div>
+            </div>
+          </div>
+```
+*/
+/*
+---
+name: ボックス_画像あり
+category: Components
+---
+```types.html
+<div class="c-box">
+            <div class="c-box__block">
+              <div class="row">
+                <div class="large-4 small-12">
+                  <div class="c-box__image"><img src="/dist/assets/images/img-block-01.jpg" alt="">
+                  </div>
+                </div>
+                <div class="large-8 small-12">
+                  <div class="c-box__content">
+                    <div class="c-heading is-sm is-bottom">見出しレベル4見出しレベル4</div>
+                    <p>ボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキスト</p>
+                    <div class="u-mbs is-top is-xs u-text-right"><a class="c-button is-sm" href="#">詳細はこちら</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
+/*
+---
+name: ボックス_数字付き
+category: Components
+---
+```types.html
+<div class="c-box  is-number-left">
+            <div class="c-box__block">
+              <div class="c-box__number"><small>STEP</small><span>01</span>
+              </div>
+              <div class="row">
+                <div class="large-4 small-12">
+                  <div class="c-box__image"><img src="/dist/assets/images/img-block-01.jpg" alt="">
+                  </div>
+                </div>
+                <div class="large-8 small-12">
+                  <div class="c-box__content">
+                    <div class="c-heading is-sm is-bottom">見出しレベル4見出しレベル4</div>
+                    <p>ボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキスト</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="c-box__block">
+              <div class="c-box__number"><small>STEP</small><span>01</span>
+              </div>
+              <div class="row">
+                <div class="large-4 small-12">
+                  <div class="c-box__image"><img src="/dist/assets/images/img-block-01.jpg" alt="">
+                  </div>
+                </div>
+                <div class="large-8 small-12">
+                  <div class="c-box__content">
+                    <div class="c-heading is-sm is-bottom">見出しレベル4見出しレベル4</div>
+                    <p>ボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキスト</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
+/*
+---
+name: 関連コンテンツ
+category: PostContent
+---
+```types.html
+<h4 class="c-heading is-xs is-bg-color">この記事を書いた人</h4>
+<div class="c-block">
+  <div class="row">
+    <div class="large-3 small-4">
+      <div class="c-block__image"><img src="/dist/assets/images/img-thumbnail-01.jpg" alt="">
+      </div>
+    </div>
+    <div class="large-9 small-8">
+      <div class="c-block__content">
+        <h6>名前名前</h6>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="u-text-right u-mbs is-top is-xxs"><a class="c-button is-xs" href="">この執筆者の記事一覧</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+.c-box {
+  &__block {
+    background-color: $color-secondary;
+    padding: rem-calc(32) rem-calc(40);
+    margin-bottom: rem-calc(56);
+    @include breakpoint(small only) {
+      padding: rem-calc(24);
+      margin-bottom: rem-calc(24);
+
+    }
+    //*最後は矢印なし
+    &:last-child {
+      margin-bottom: 0;
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+  &.is-number-left {
+    .c-box__block {
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 32px 33px 0 33px;
+        border-color: $color-primary transparent transparent transparent;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%,100%);
+        @include breakpoint(small only) {
+          border-width: 16px 16px 0 16px;
+        }
+      }
+    }
+    .c-box__number {
+      background-color: $color-primary;
+      color: $color-white;
+      width: rem-calc(86);
+      height: rem-calc(86);
+      text-align: center;
+      @include webfont-bold();
+      position: absolute;
+      top: 0;
+      line-height: 1;
+      left: 0;
+      padding-top: rem-calc(14);
+      @include breakpoint(small only) {
+        width: rem-calc(64);
+        height: rem-calc(64);
+        padding-top: rem-calc(10);
+      }
+      small {
+        @include webfont-bold();
+        font-size: rem-calc(18);
+        letter-spacing: 0.1em;
+        display: block;
+        @include breakpoint(small only) {
+          font-size: rem-calc(14);
+        }
+      }
+      span {
+        font-size: rem-calc(42);
+        letter-spacing: 0;
+        display: block;
+        @include breakpoint(small only) {
+          font-size: rem-calc(32);
+        }
+      }
+    }
+  }
+  &__image {
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+  }
+
+  //丸画像
+  &.is-roundimg {
+
+    .c-box__image {
+      width: rem-calc(200);
+      height: rem-calc(200);
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      @include center-block();
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        @include center-both();
+      }
+    }
+
+  }
+}

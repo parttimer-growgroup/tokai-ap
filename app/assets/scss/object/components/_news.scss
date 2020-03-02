@@ -1,0 +1,226 @@
+/*
+---
+name: お知らせ_通常_フロントページ
+category: News
+---
+```types.html
+<div class="c-news">
+            <div class="row">
+              <div class="large-3 small-12">
+                <div class="c-news__head">
+                  <h2 class="c-news__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
+                  <div class="c-news__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                  </div>
+                </div>
+              </div>
+              <div class="large-9 small-12">
+                <div class="c-news__content"><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
+.c-news {
+  @include breakpoint(small only) {
+    position: relative;
+    padding-bottom: rem-calc(72);
+  }
+  &__head {
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+  }
+  &__title {
+    text-align: left !important;
+    margin: 0 !important;
+  }
+  &__button {
+    margin-top: rem-calc(56);
+    @include breakpoint(small only) {
+      margin-top: 0;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      .c-button {
+        max-width: rem-calc(224);
+      }
+    }
+  }
+  &__block {
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    border-bottom: 1px solid $border-base-color;
+    display: flex;
+    align-items: center;
+    padding: rem-calc(24) 0 rem-calc(16);
+    @include breakpoint(small only) {
+      flex-wrap: wrap;
+      padding: rem-calc(16) 0 rem-calc(12) !important;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  &__inner {
+
+  }
+  &__date {
+    @include webfont-bold();
+    color: $color-primary;
+    letter-spacing: 0;
+  }
+  &__label {
+    margin-left: rem-calc(24);
+    margin-right: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-left: rem-calc(16);
+      margin-right: 0;
+
+    }
+  }
+  &__text {
+    font-weight: 700;
+    @include breakpoint(small only) {
+      margin-top: rem-calc(8);
+    }
+  }
+}
+/*
+---
+name: お知らせ_1カラム_フロントページ
+category: News
+---
+```types.html
+<div class="c-news  is-onecolumn">
+            <div class="row">
+              <div class="large-10 is-push-lg-1 small-12">
+                <h2 class="c-news__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
+                <div class="c-news__content"><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__inner">
+                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__inner">
+                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a>
+                </div>
+                <div class="c-news__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
+/*
+---
+name: お知らせ_1カラム_アーカイブ01
+category: News
+---
+```types.html
+<div class="c-news  is-onecolumn">
+  <div class="row">
+    <div class="large-10 is-push-lg-1 small-12">
+      <h2 class="c-news__title c-heading is-md is-line-under is-color-primary">すべて</h2>
+      <div class="c-news__content">
+        <a class="c-news__block" href="/archive-onecolumn/page/">
+            <div class="c-news__date">2018.10.10
+            </div>
+            <div class="c-news__label  c-label is-white">カテゴリ
+            </div>
+            <div class="c-news__inner">
+              <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+              </div>
+              <div class="c-news__excerpt">本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+              </div>
+            </div></a><a class="c-news__block" href="/archive-onecolumn/page/">
+            <div class="c-news__date">2018.10.10
+            </div>
+            <div class="c-news__label  c-label is-white">カテゴリ
+            </div>
+            <div class="c-news__inner">
+              <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+              </div>
+              <div class="c-news__excerpt">本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+              </div>
+            </div>
+            </a>
+        </div>
+     </div>
+  </div>
+</div>
+
+```
+*/
+.c-news {
+  &.is-onecolumn {
+    .c-news__block {
+      padding: rem-calc(24) 0;
+      align-items: flex-start;
+      @include breakpoint(small only) {
+        align-items: center;
+        padding: rem-calc(12) 0!important;
+      }
+    }
+    .c-news__date {
+      margin-top: rem-calc(6);
+      @include breakpoint(small only) {
+        margin-top: 0;
+      }
+    }
+    .c-news__title {
+      text-align: center!important;
+      margin-bottom: rem-calc(40)!important;
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(24)!important;
+      }
+    }
+    .c-news__label {
+      margin-top: rem-calc(2);
+    }
+    .c-news__excerpt {
+      font-size: rem-calc(14);
+      margin-top: rem-calc(8);
+      @include breakpoint(small only) {
+        font-size: rem-calc(12);
+        margin-top: rem-calc(4);
+      }
+    }
+    .c-news__button {
+      text-align: center;
+      .c-button {
+        max-width: rem-calc(224);
+      }
+    }
+  }
+}

@@ -1,0 +1,355 @@
+/*
+---
+name: ヒーローブロック_通常
+category: SpecialComponents
+---
+```types.html
+<div class="c-hero-block">
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__title c-heading is-sm is-bottom">タイトルがここに入ります。
+        </div>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-hero-block__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__title  c-heading is-sm is-bottom">タイトルがここに入ります。
+        </div>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-hero-block__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: ヒーローブロック_平行四辺形
+category: SpecialComponents
+---
+```types.html
+<div class="c-hero-block is-skew">
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__inner">
+          <div class="c-hero-block__head"><small>01</small><span>TITLE</span>
+          </div>
+          <div class="c-hero-block__title  c-heading is-md is-bottom">タイトルがここに入ります。
+          </div>
+          <p>テキストテキストテキストテキスト</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__inner">
+          <div class="c-hero-block__head"><small>02</small><span>TITLE</span>
+          </div>
+          <div class="c-hero-block__title  c-heading is-md is-bottom">タイトルがここに入ります。
+          </div>
+          <p>テキストテキストテキストテキスト</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: ヒーローブロック_斜め下
+category: SpecialComponents
+---
+```types.html
+<div class="c-hero-block  is-down">
+  <div class="l-container">
+    <div class="c-hero-block__block">
+      <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+      </div>
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__title  c-heading is-sm is-bottom">タイトルがここに入ります。
+        </div>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-hero-block__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+        </div>
+      </div>
+    </div>
+    <div class="c-hero-block__block">
+      <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+      </div>
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__title  c-heading is-sm is-bottom">タイトルがここに入ります。
+        </div>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-hero-block__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.c-hero-block {
+  overflow: hidden;
+  &__block {
+    margin-bottom: rem-calc(80);
+    position: relative;
+    min-height: rem-calc(480);
+    padding-top: rem-calc(80);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(48);
+      min-height: inherit;
+      padding-top: 0 !important;
+    }
+    // 偶数番目
+    &:nth-child(even),
+    &.is-reverse {
+      .c-hero-block__image {
+        left: auto;
+        right: 0;
+      }
+      .c-hero-block__content {
+        margin-left: 0;
+      }
+
+    }
+    //*最後のブロック
+    &:last-child {
+      margin-bottom: rem-calc(8);
+    }
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 880/1600*100%;
+    height: rem-calc(480);
+    overflow: hidden;
+    @include breakpoint(small only) {
+      position: relative;
+      width: 100%;
+      height: 55vw;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: inherit;
+      @include breakpoint(small only) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__content {
+    background-color: $color-white;
+    position: relative;
+    z-index: 99;
+    width: 588/1140*100%;
+    min-height: rem-calc(312);
+    margin-left: auto;
+    padding: rem-calc(64);
+    border: 1px solid $color-primary;
+    @include breakpoint(small only) {
+      width: 100%;
+      min-height: inherit;
+      margin-top: rem-calc(-24);
+      padding: rem-calc(24);
+    }
+  }
+
+  &__detail {
+    color: $color-primary;
+    font-weight: 400;
+  }
+
+  //*数字
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(24)/2;
+    }
+    small {
+      @include webfont-bold();
+      font-size: rem-calc(100);
+      opacity: 0.25;
+      line-height: 1;
+      letter-spacing: 0;
+      cursor: pointer;
+      margin-right: rem-calc(16);
+      @include breakpoint(small only) {
+        font-size: rem-calc(100)/2;
+        margin-right: rem-calc(16)/2;
+      }
+    }
+    span {
+      @include webfont-bold();
+      font-size: rem-calc(28);
+      letter-spacing: 0.1em;
+      @include breakpoint(small only) {
+        font-size: rem-calc(28)*0.85;
+      }
+    }
+  }
+  &__button {
+    margin-top: rem-calc(32);
+    text-align: right;
+    @include breakpoint(small only) {
+      margin-top: rem-calc(32)/2;
+    }
+  }
+  //skew
+  &.is-skew {
+    .c-hero-block__block {
+      padding-top: rem-calc(40);
+    }
+    .c-hero-block__image {
+      &:after {
+        content: "";
+        display: block;
+        width: rem-calc(200);
+        height: 100%;
+        transform: translateX(50%) skew(-15deg);
+        background-color: $color-white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include breakpoint(small only) {
+          display: none;
+        }
+      }
+    }
+    .c-hero-block__content {
+      width: 680/1140*100%;
+      min-height: rem-calc(400);
+      transform: skew(-15deg);
+      border: none;
+      filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.16));
+      position: relative;
+      padding: rem-calc(64) rem-calc(64) rem-calc(120) rem-calc(88);
+      @include breakpoint(small only) {
+        width: 100%;
+        min-height: inherit;
+        padding: rem-calc(24) rem-calc(24) rem-calc(32) rem-calc(40);
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 1000px;
+        height: 100%;
+        background-color: $color-white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+      }
+    }
+    .c-hero-block__title {
+      text-align: left;
+    }
+    .c-hero-block__inner {
+      transform: skew(15deg);
+    }
+    // 偶数番目
+    .c-hero-block__block:nth-child(even) {
+      .c-hero-block__image {
+        &:after {
+          transform: translateX(-50%) skew(-15deg);
+          background-color: $color-white;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .c-hero-block__content {
+        padding: rem-calc(64) rem-calc(88) rem-calc(120) rem-calc(64);
+        @include breakpoint(small only) {
+          padding: rem-calc(24) rem-calc(40) rem-calc(32) rem-calc(24);
+        }
+        &:after {
+          right: auto;
+          left: 0;
+          transform: translateX(-100%);
+        }
+      }
+
+    }
+  }
+
+  //斜め下
+  &.is-down {
+    .c-hero-block__block {
+      display: flex;
+      align-items: flex-end;
+      min-height: inherit;
+      padding-top: 0;
+      padding-bottom: rem-calc(64);
+      margin-bottom: rem-calc(64);
+      @include breakpoint(small only) {
+        display: block;
+        padding-bottom: 0;
+      }
+      &:nth-child(even) {
+        .c-hero-block__image {
+          order: 2;
+        }
+        .c-hero-block__content {
+          order: 1;
+          margin-left: 0;
+          margin-right: rem-calc(-134);
+          @include breakpoint(small only) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .c-hero-block__image {
+      position: inherit;
+      width: 686/1140*100%;
+      @include breakpoint(small only) {
+        position: relative;
+        width: 100%;
+      }
+    }
+    .c-hero-block__content {
+      border: none;
+      margin-left: rem-calc(-134);
+      margin-bottom: rem-calc(-64);
+      @include breakpoint(small only) {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+    }
+    .c-hero-block__button {
+      text-align: left;
+    }
+  }
+}

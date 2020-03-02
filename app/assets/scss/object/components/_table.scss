@@ -1,0 +1,75 @@
+/*
+---
+name: <table> テーブル
+category: Base
+---
+```types.html
+<table class="c-table">
+            <tbody>
+              <tr>
+                <th>thテキスト</th>
+                <td>tdテキストテキストテキストテキストテキスト</td>
+              </tr>
+              <tr>
+                <th>thテキスト</th>
+                <td>tdテキストテキストテキストテキストテキスト</td>
+              </tr>
+              <tr>
+                <th>thテキスト</th>
+                <td>tdテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</td>
+              </tr>
+            </tbody>
+          </table>
+```
+*/
+.c-table {
+  width: 100%;
+  border-top: 1px solid $border-base-color;
+  tbody {
+    th,
+    td {
+      text-align: left;
+      border-bottom: 1px solid $border-base-color;
+      padding: rem-calc(24);
+      vertical-align: top;
+      @include breakpoint(small only) {
+        padding: rem-calc(12);
+      }
+    }
+    th {
+      color: $color-primary;
+      width: rem-calc(196);
+      position: relative;
+      @include breakpoint(small only) {
+        width: rem-calc(96);
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $color-primary;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+      }
+    }
+  }
+  &.is-th-bgcolor {
+    tbody {
+      th,
+      td {
+        padding: rem-calc(13) rem-calc(24);
+      }
+    }
+    th {
+      color: $font-base-color;
+      width: rem-calc(236);
+      position: relative;
+      background-color: $color-secondary;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

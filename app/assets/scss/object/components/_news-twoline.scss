@@ -1,0 +1,153 @@
+/*
+---
+name: お知らせ_2カラム_フロントページ
+category: News
+---
+```types.html
+<div class="row">
+            <div class="large-6 small-12">
+              <div class="c-news-twoline">
+                <div class="c-news-twoline__head">
+                  <h2 class="c-news-twoline__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
+                  <div class="c-news-twoline__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                  </div>
+                </div>
+                <div class="c-news-twoline__content"><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a>
+                </div>
+              </div>
+            </div>
+            <div class="large-6 small-12">
+              <div class="c-news-twoline">
+                <div class="c-news-twoline__head">
+                  <h2 class="c-news-twoline__title c-heading is-xlg"><span>BLOG</span><small>ブログ</small></h2>
+                  <div class="c-news-twoline__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                  </div>
+                </div>
+                <div class="c-news-twoline__content"><a class="c-news-twoline__block is-image-display" href="#">
+                    <div class="c-news-twoline__image"><img src="/dist/assets/images/img-blog-01.jpg" alt="">
+                    </div>
+                    <div class="c-news-twoline__item">
+                      <div class="c-news-twoline__date">2018.10.10
+                      </div>
+                      <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news-twoline__block is-image-display" href="#">
+                    <div class="c-news-twoline__image"><img src="/dist/assets/images/img-blog-01.jpg" alt="">
+                    </div>
+                    <div class="c-news-twoline__item">
+                      <div class="c-news-twoline__date">2018.10.10
+                      </div>
+                      <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news-twoline__block is-image-display" href="#">
+                    <div class="c-news-twoline__image"><img src="/dist/assets/images/img-blog-01.jpg" alt="">
+                    </div>
+                    <div class="c-news-twoline__item">
+                      <div class="c-news-twoline__date">2018.10.10
+                      </div>
+                      <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
+.c-news-twoline {
+  @include breakpoint(small only) {
+    position: relative;
+    padding-bottom: rem-calc(72);
+  }
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0!important;
+    small {
+      color: $font-base-color;
+      margin-left: rem-calc(16);
+    }
+  }
+  &__button {
+    margin-left: auto;
+    width: inherit;
+    @include breakpoint(small only) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .c-button {
+      width: rem-calc(155)!important;
+      @include breakpoint(small only) {
+        width: 100%!important;
+        max-width: rem-calc(225)!important;
+      }
+    }
+  }
+  &__block {
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    border-bottom: 1px solid #E2E2E2;
+    display: block;
+    padding: rem-calc(20) 0;
+    font-size: rem-calc(14);
+    letter-spacing: 0.05em;
+    @include breakpoint(small only) {
+      padding: rem-calc(16) 0;
+    }
+    //*画像有りver
+    &.is-image-display {
+      display: flex;
+      align-items: flex-start;
+    }
+    .c-news-twoline__image {
+      flex-shrink: 0;
+      margin-right: rem-calc(24);
+      width: rem-calc(120);
+      @include breakpoint(small only) {
+        margin-right: rem-calc(16);
+        width: rem-calc(96);
+      }
+    }
+    .c-news-twoline__date {
+      line-height: 1;
+      margin-bottom: rem-calc(10);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(6);
+      }
+    }
+  }
+  &__date {
+    color: $color-primary;
+    @include webfont();
+    margin-bottom: rem-calc(2);
+  }
+}

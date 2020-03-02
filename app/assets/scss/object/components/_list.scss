@@ -1,0 +1,86 @@
+.c-list {
+  li {
+    margin-bottom: rem-calc(6);
+  }
+}
+
+/*
+---
+name: <ul> 順序なしテキスト
+category: Base
+---
+```types.html
+<ul class="c-list is-disc">
+            <li>リスト1</li>
+            <li>リスト2
+              <ul>
+                <li>リスト2の子要素</li>
+                <li>リスト2の子要素</li>
+              </ul>
+            </li>
+            <li>リスト2</li>
+          </ul>
+```
+*/
+.c-list.is-disc {
+  li {
+    position: relative;
+    padding-left: rem-calc(20);
+    @include breakpoint(small only) {
+      padding-left: rem-calc(18);
+    }
+    &:before {
+      content: "\f111";
+      font-size: 0.8em;
+      font-family: "FontAwesome";
+      color: $color-primary;
+      position: absolute;
+      top: rem-calc(1);
+      left: 0;
+      @include breakpoint(small only) {
+        top: rem-calc(3);
+      }
+    }
+    ul {
+      margin-left: rem-calc(24);
+      li {
+        padding-left: rem-calc(18);
+        &:before {
+          content: "・";
+          color: $font-base-color;
+        }
+      }
+    }
+  }
+}
+
+/*
+---
+name: <ol> 順序ありテキスト
+category: Base
+---
+```types.html
+<ol class="c-list is-outline">
+            <li>リスト1</li>
+            <li>リスト2
+              <ul>
+                <li>リスト2の子要素</li>
+                <li>リスト2の子要素</li>
+              </ul>
+            </li>
+            <li>リスト2</li>
+          </ol>
+```
+*/
+.c-list.is-outline {
+  padding-left: rem-calc(32)!important;
+  li {
+    position: relative;
+    list-style: decimal;
+    ul {
+      li {
+        margin-left: rem-calc(38);
+      }
+    }
+  }
+}
