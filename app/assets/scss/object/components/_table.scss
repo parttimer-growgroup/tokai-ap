@@ -29,7 +29,7 @@ category: Base
     th,
     td {
       text-align: left;
-      border-bottom: 1px solid $border-base-color;
+      border-bottom: 1px solid $color-gray-light;
       padding: rem-calc(24);
       vertical-align: top;
       @include breakpoint(small only) {
@@ -37,9 +37,10 @@ category: Base
       }
     }
     th {
-      color: $color-primary;
+      color: $color-black;
       width: rem-calc(196);
       position: relative;
+      border-bottom:1px solid $border-base-color;
       @include breakpoint(small only) {
         width: rem-calc(96);
       }

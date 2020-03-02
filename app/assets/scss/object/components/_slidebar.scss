@@ -27,7 +27,7 @@ $slidebar-menu-width: 75% !default;
 $slidebar-menu-eaasing: all ease-in-out .2s !default;
 $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
-@include breakpoint(large up) {
+@include breakpoint(1101 up) {
   .c-slidebar-button {
     display: none !important;
   }
@@ -36,7 +36,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
   }
 }
 
-@include breakpoint(medium down) {
+@include breakpoint(mdlarge down) {
   // トリガーとなるボタン
   .c-slidebar-button {
     position: fixed;
@@ -87,13 +87,13 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
   // メニュー自体
   .c-slidebar-menu {
-    height: calc(100vh - 55px)!important;
+    height: 100vh !important;
     position: fixed;
-    background-color: $color-primary;
+    background-color: $color-secondary;
     z-index: 9980;
     width: $slidebar-menu-width;
-    -webkit-transform: translateX(100%);
-    transform: translate3d(100%, 0px, 0px);
+    -webkit-transform: translateX(0%);
+    transform: translate3d(0px, 0px, 0px);
     right: 0;
     -webkit-transition: $slidebar-menu-eaasing;
     transition: $slidebar-menu-eaasing;
@@ -101,14 +101,14 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     top: 0;
     -webkit-overflow-scrolling: touch;
     padding-left: rem-calc(24);
+    z-index: -1;
     &.is-active {
       height: calc(100% - 65px)!important;
     }
     // 上から下へ
     &.is-top-to-bottom {
       -webkit-transform: translateX(0%);
-      -webkit-transform: translateY(-100%);
-      transform: translate3d(0px, -100%, 0px);
+      transform: translate3d(0px, 0px, 0px);
       height: auto;
       width: 100%;
       opacity: 0;
@@ -166,17 +166,18 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     }
 
     ul {
-      background:$color-primary;
+      margin-top: rem-calc(55);
+
       li {
-        border-bottom: 1px solid $border-base-color;
         a,
         span {
-          font-size: rem-calc(15);
+          font-size: rem-calc(16);
           display: block;
           padding: rem-calc(14) 0;
           text-decoration: none;
           color: $color-white;
           font-weight: 400;
+          text-align: center;
         }
       }
     }
@@ -184,20 +185,15 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     &__button {
       margin-top: rem-calc(32);
       max-width: calc(100% - 24px);
-      background-color: $color-white;
-      color: $color-primary;
+      border: 1px solid $color-white;
+      color: $color-white;
       font-size: rem-calc(16);
-
-      &:before {
-        content: "\f0e0";
-        font-family: "FontAwesome";
-        color: $color-primary;
-        font-size: rem-calc(18);
-        margin-right: rem-calc(12);
-      }
-
+      background: $color-secondary;
       &:after {
         content: none;
+      }
+      &:nth-of-type(2){
+        margin-top: rem-calc(20);
       }
     }
 
@@ -219,6 +215,22 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       font-size: rem-calc(20);
       margin: 0 rem-calc(10);
       text-decoration: none;
+    }
+    &__tel{
+      display: block;
+      text-align: center;
+      color: $color-white;
+      text-align: center;
+      text-decoration: none;
+      margin-top: rem-calc(33);
+
+      span{
+        font-size: rem-calc(26);
+        display: block;
+      }
+      small{
+        font-size: rem-calc(10);
+      }
     }
   }
 
@@ -301,9 +313,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       -webkit-transform: translateX(0);
       transform: translate3d(0, 0, 0);
       &.is-top-to-bottom {
-        -webkit-transform: translateY(55px);
-        transform: translate3d(0, 55px, 0);
         opacity: 1;
+        z-index: 999;
       }
     }
   }
