@@ -4,7 +4,7 @@
   z-index: 9990;
   padding: 0 rem-calc(32);
   height: 87px;
-  @include breakpoint(1100 down) {
+  @include breakpoint(1000 down) {
     // position: fixed;
     // top: 0;
     // left: 0;
@@ -17,13 +17,14 @@
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    @include breakpoint(1100 down) {
+    @include breakpoint(1000 down) {
       flex-wrap: wrap;
       margin-bottom: 0;
+      width: 100%;
     }
   }
   &_heading{
-    @include breakpoint(1100 down) {
+    @include breakpoint(1000 down) {
       width: rem-calc(148);
       margin: 0;
       display: flex;
@@ -38,7 +39,7 @@
     margin: 0;
     width: rem-calc(175);
     flex-shrink: 0;
-    @include breakpoint(1100 down) {
+    @include breakpoint(1000 down) {
       width: rem-calc(148);
       margin: 0 !important;
     }
@@ -53,22 +54,27 @@
   }
   &__nav{
     margin-left: auto;
-    @include breakpoint(1100 down) {
+    @include breakpoint(950 down) {
       display: none;
     }
     ul{
       display: flex;
       align-items: center;
       width: 100%;
-      padding: rem-calc(14) 0;
+      padding: 0;
       li{
         margin-left: rem-calc(12);
         margin-right: 32px;
         @include breakpoint(1368 down) {
           margin-right: 16px;
+          margin-left: rem-calc(6);
         }
         @include breakpoint(1200 down) {
           margin-right: 8px;
+          margin-left: rem-calc(2)
+        }
+        @include breakpoint(1100 down) {
+          margin-right: 4px;
         }
         a {
           text-decoration: none;
@@ -84,7 +90,7 @@
             content: "";
             position: absolute;
             right: 0;
-            bottom: -36px;
+            bottom: -38px;
             left: 0;
             margin: auto;
             width: 0;
@@ -92,6 +98,9 @@
             background: $color-primary;
             opacity: 0;
             transition: .3s all;
+            @include breakpoint(1100 down) {
+              bottom: -23px;
+            }
           }
           //*hover
           &:hover {
@@ -118,7 +127,10 @@
         font-size: rem-calc(23);
       }
       @include breakpoint(1200 down) {
-        font-size: rem-calc(20);
+        font-size: rem-calc(18);
+      }
+      @include breakpoint(1100 down) {
+        font-size: rem-calc(14);
       }
     }
     small{
@@ -136,6 +148,15 @@
     padding: rem-calc(10) rem-calc(10);
     border: 1px solid $color-primary;
     transition: .3s all;
+    @include breakpoint(1368 down) {
+      padding: rem-calc(8);
+    }
+    @include breakpoint(1200 down) {
+      padding: rem-calc(4);
+    }
+    @include breakpoint(1100 down) {
+      padding: rem-calc(4);
+    }
     &:after{
       display: none;
     }

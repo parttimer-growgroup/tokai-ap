@@ -34,8 +34,14 @@ category: Heading
 */
 
 .c-heading {
+  margin: 0;
   small {
     font-size: 0.65em;
+  }
+  &.is-span-color{
+    span{
+      color: $color-primary;
+    }
   }
 }
 
@@ -54,7 +60,7 @@ category: Heading
 ```
 */
 /* h1 */
-.c-heading.is-bottom-line {
+.c-heading.is-line-bottom {
   text-align: center;
   color: $color-primary;
   padding-bottom: rem-calc(16);
@@ -62,6 +68,7 @@ category: Heading
   font-size: rem-calc(24);
   line-height: 36/24*1;
   letter-spacing: 0.05em;
+  color: $color-primary;
   &::after{
     content: '';
     position: absolute;
@@ -71,7 +78,7 @@ category: Heading
     margin: auto;
     width: rem-calc(41);
     height: 2px;
-    color: $color-primary;
+    background: $color-primary;
   }
   @include breakpoint(small only) {
     font-size: rem-calc(24)*0.8;
@@ -80,12 +87,20 @@ category: Heading
 /* h1 */
 .c-heading.is-lg {
   text-align: center;
-  color: $color-primary;
   font-size: rem-calc(26);
   letter-spacing: 0.1em;
   line-height: 38/26*1;
   @include breakpoint(small only) {
     font-size: rem-calc(26)*0.8;
+  }
+  &.is-first-color{
+    color: $color-black;
+    margin-top: rem-calc(28);
+    font-weight: bold;
+
+    &:first-letter{
+      color: $color-primary;
+    }
   }
 }
 /* h2 */
@@ -242,6 +257,7 @@ category: Heading
       }
     }
   }
+
 }
 /*
 ---

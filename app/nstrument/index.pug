@@ -1,0 +1,34 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "nstrument" // ページのID
+  - current.title = "楽器運搬" // タイトル
+  - current.description = "これは楽器運搬についての説明文です" // 説明文
+  - current.bodyClass = "nstrument" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header("img-page-header-nstrument.jpg","楽器運搬")
+  +c_breadcrumb()
+
+block body
+  main.l-main
+    section.l-section.is-lg
+      .l-container
+        h2.c-heading.is-lg.is-span-color.
+          ブラスバンドやオーケストラなど、<br>
+          大切な<span>楽器</span>は楽器運搬のノウハウを備えた<span>プロ</span>にお任せください。<br>
+          <span>楽器専用車</span>を使用するので安心です。
+    section.l-section.is-lg
+    +c.service
+      +e.inner
+          +e.block
+            +e.box
+              +e.box-image: +bgimg("img-service-01.jpg")
+            +e.box
+              +e.content
+                +e.content-title.c-heading.is-lg 2段仕様の特別車で楽器の破損を防ぐ
+                +e.content-text.
+                  楽器専用車は、荷台2段仕様の特別車です。<br>
+                  チャイム、ティンパニー等の大型重量楽器を管楽器、コントラバス等を分けて搭載することにより、運搬時の楽器の破損を防ぐことができます。
+  +l_offer
+

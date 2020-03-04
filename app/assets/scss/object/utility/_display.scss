@@ -32,3 +32,15 @@
   display: inline !important;
 }
 
+.dn-w{
+  display: none;
+  @include breakpoint(small only) {
+    display: block;
+  }
+}
+.dn-s{
+  display: block;
+  @include breakpoint(small only) {
+    display: none;
+  }
+}

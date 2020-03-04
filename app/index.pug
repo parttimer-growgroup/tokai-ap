@@ -12,78 +12,48 @@ block append config
 block body
   +c_main-visual()
   main.l-main
-    section.l-section.is-lg.is-color-secondary
-      .l-container
-        h2.c-heading.is-xlg.is-bottom
-          span ABOUT
-          small 私たちについて
-        p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        +c.card.u-mbs.is-top.is-lg
-          .row
-            .large-4.small-12
-              +e.block
-                +e.image: +img("img-card-01.jpg")
-                +e.content
-                  h3.c-card__title コンセプトタイトル
-                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-            .large-4.small-12
-              +e.block
-                +e.image: +img("img-card-01.jpg")
-                +e.content
-                  h3.c-card__title コンセプトタイトル
-                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-            .large-4.small-12
-              +e.block
-                +e.image: +img("img-card-01.jpg")
-                +e.content
-                  h3.c-card__title コンセプトタイトル
-                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+    section
+      +c.concept
+        .l-container
+          h2.c-heading.is-line-bottom CONCEPT
+          .c-heading.is-lg.is-first-color 新しいロジスティック<br class="dn-w">パートナーとして
+          p.u-mbs.c-concept__text.
+            当社は常にお客様のニーズをしっかりと把握し、<br class="dn-s">
+            最適なロジスティックソリューションをご提案させていただく運送サービス提供しております。<br>
+            楽器運搬をはじめ、貸切便や定期便のほか、緊急のお荷物についても356日24時間対応させていただく<br class="dn-s">
+            新しいロジスティックパートナーとしてご利用ください。
+
     section.l-section.is-lg.is-top
-      .l-container
-        h2.c-heading.is-xlg.is-bottom
-          span SERVICE
-          small 事業内容
-      +c.hero-block-square
+      +c.links
         +e.block
-          +e.image: +img("img-hero-block-01.jpg")
-          .l-container
-            +e.content
-              +e.inner
-                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                +e.button: +a("#").c-button.is-sm ボタンテキスト
-        +e.block
-          +e.image: +img("img-hero-block-01.jpg")
-          .l-container
-            +e.content
-              +e.inner
-                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                +e.button: +a("#").c-button.is-sm ボタンテキスト
-        +e.block
-          +e.image: +img("img-hero-block-01.jpg")
-          .l-container
-            +e.content
-              +e.inner
-                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                +e.button: +a("#").c-button.is-sm ボタンテキスト
-    section.l-section.is-lg
-      .l-container
-        +c.news
-          .row
-            .large-3.small-12
-              +e.head
-                h2.c-news__title.c-heading.is-xlg
-                  span NEWS
-                  small お知らせ
-                +e.button: +a("/news/").c-button.is-sm 一覧を見る
-            .large-9.small-12
-              +e.content
-                +loop(3)
-                  +a("/news/page/").c-news__block
-                    +e.date 2018.10.10
-                    +e.label.c-label.is-white カテゴリ
-                    +e.text お知らせの投稿タイトルがここに入ります。
+          +e.box
+            +e.box-item.is-lg
+              +bgimg("img-links-01.jpg").c-links__box-img
+              +e.box-texts
+                div
+                  +e.box-title.is-line-bottom.u-text-center SERVICE
+                  +e.box-title-sub.u-text-center 業務内容
+
+          +e.box
+            +e.box-item.is-href
+              +bgimg("img-links-02.jpg").c-links__box-img
+              +e.box-texts
+                div
+                  +e.box-title 楽器運搬
+                  p.u-mbs.is-top.is-xxs.
+                    楽器運搬のノウハウを備えたプロが、<br>
+                    楽器専用の最適な車両で安全にお運びします。
+              +e.arrow-btn
+                +a("#")
+            +e.box-item.is-href
+              +bgimg("img-links-03.jpg").c-links__box-img
+              +e.box-texts
+                div
+                  +e.box-title 一般貨物
+                  p.u-mbs.is-top.is-xxs.
+                    貸切便や定期便のほか、重量物、緊急のお荷物に<br>
+                    ついても365日24時間対応させていただきます。
+              +e.arrow-btn
+                +a("#")
   // オファーブロック
   +l_offer

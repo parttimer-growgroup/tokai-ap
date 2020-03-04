@@ -14,7 +14,6 @@ category: Buttons
   outline: none;
   display: inline-block;
   width: 100%;
-  max-width: rem-calc(203);
   text-align: center;
   background-color: $color-primary;
   color: $color-white;
@@ -22,7 +21,7 @@ category: Buttons
   text-decoration: none;
   padding: rem-calc(13) rem-calc(24);
   position: relative;
-  transition: all .3s;
+  transition: .3s all;
   font-weight: 700;
   // *アイコン
   &:after {
@@ -53,26 +52,65 @@ category: Buttons
     opacity: 1;
     z-index: 1;
     color: $color-primary;
+    transition: .3s all;
     &:before{
       width: 100%;
       transition: .3s all;
     }
   }
+  &.is-tel{
+    &::before{
+      background: $color-primary;
+    }
+    &:hover{
+      &:before{
+        color: $color-white;
+      }
+      & .l-offer-tel{
+        color: $color-white;
+      }
+    }
+  }
   &.is-icon{
-    width: rem-calc(268);
+    max-width: rem-calc(268);
     padding: rem-calc(20) 0;
-
+    @include breakpoint(small only) {
+      max-width: 100%;
+    }
     & .btn-icon{
       position: relative;
       display: block;
-      background: url("../images/img-btn-01.png")no-repeat center center / cover;
-      width: 41px;
-      height: 41px;
       margin: 0 auto rem-calc(8);
+      &.is-guitar{
+        background: url("../images/icon-guitar-01.png")no-repeat center center / cover;
+        width: 41px;
+        height: 41px;
+      }
+      &.is-box{
+        background: url("../images/icon-box-01.png")no-repeat center center / cover;
+        width: 35px;
+        height: 40px;
+      }
+      &.is-phone{
+        background: url("../images/icon-phone-01.png")no-repeat center center / cover;
+        width: 40px;
+        height: 40px;
+      }
     }
     &:hover{
       .btn-icon{
-        background: url("../images/img-btn-02.png")no-repeat center center / cover;
+        &.is-guitar{
+          background: url("../images/icon-guitar-02.png")no-repeat center center / cover;
+        }
+        &.is-box{
+          background: url("../images/icon-box-02.png")no-repeat center center / cover;
+        }
+        &.is-phone{
+          background: url("../images/icon-phone-02.png")no-repeat center center / cover;
+        }
+      }
+      & .l-offer__tel{
+        color: $color-white;
       }
     }
     &:after{
@@ -197,6 +235,10 @@ category: Buttons
     &:hover {
       opacity: 0.6;
     }
+  }
+  &.is-tel{
+    background: $color-white;
+    color: $color-primary;
   }
 }
 /*

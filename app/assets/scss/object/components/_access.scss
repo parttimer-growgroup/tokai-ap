@@ -1,0 +1,22 @@
+.c-access{
+  margin-bottom: rem-calc(114);
+  &__map{
+    display: block;
+    width: 100%;
+    height: rem-calc(337);
+    display: block;
+    @include breakpoint(small only) {
+      height: auto;
+    }
+    & iframe{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__title{
+    font-weight: bold;
+  }
+  &__text{
+    margin-top: rem-calc(7);
+  }
+}
