@@ -23,6 +23,7 @@ category: Buttons
   position: relative;
   transition: .3s all;
   font-weight: 700;
+
   // *アイコン
   &:after {
     content: "\f105";
@@ -33,6 +34,7 @@ category: Buttons
     right: rem-calc(16);
     transform: translateY(-50%);
     font-weight: 400;
+    transition: .3s all;
   }
   &:before{
     content: '';
@@ -45,29 +47,32 @@ category: Buttons
     height: 100%;
     background: $color-white;
     z-index: -1;
-    transition: .3s all;
+    transition: .3s;
     }
   // *hover
   &:hover {
     opacity: 1;
     z-index: 1;
     color: $color-primary;
-    transition: .3s all;
+    transition: .3s;
     &:before{
       width: 100%;
-      transition: .3s all;
+      transition: .3s;
     }
   }
   &.is-tel{
     &::before{
       background: $color-primary;
+      transition: .3s;
     }
     &:hover{
       &:before{
         color: $color-white;
+        transition: .3s;
       }
       & .l-offer-tel{
         color: $color-white;
+        transition: .3s all;
       }
     }
   }

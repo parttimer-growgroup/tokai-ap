@@ -19,16 +19,49 @@ block body
           大切な<span>楽器</span>は楽器運搬のノウハウを備えた<span>プロ</span>にお任せください。<br>
           <span>楽器専用車</span>を使用するので安心です。
     section.l-section.is-lg
-    +c.service
-      +e.inner
-          +e.block
-            +e.box
-              +e.box-image: +bgimg("img-service-01.jpg")
-            +e.box
-              +e.content
-                +e.content-title.c-heading.is-lg 2段仕様の特別車で楽器の破損を防ぐ
-                +e.content-text.
+      +c.hero-block-square
+        +e.block
+          +e.image: +bgimg("img-service-01.jpg").c-hero-block-square__image-img
+          .l-container
+            +e.content
+              +e.inner
+                +e.number 01
+                h3.c-heading.is-sm.is-bottom 2段仕様の<span class="is-color-primary">特別車</span>で楽器の破損を防ぐ
+                p.u-mbs.is-top.is-xs.
                   楽器専用車は、荷台2段仕様の特別車です。<br>
                   チャイム、ティンパニー等の大型重量楽器を管楽器、コントラバス等を分けて搭載することにより、運搬時の楽器の破損を防ぐことができます。
+        +e.block
+          +e.image: +bgimg("img-service-02.jpg").c-hero-block-square__image-img
+          .l-container
+            +e.content
+              +e.inner
+                +e.number 02
+                h3.c-heading.is-sm.is-bottom 通常の約<span class="is-color-primary">1.5倍</span>の楽器を運搬可能
+                p.u-mbs.is-top.is-xs.c-hero-block-square__text-right.
+                  軽〜4トン車の中から最適な車両をご提案させていただきます。<br>
+                  一度ご相談ください。
+        +e.block
+          +e.image: +bgimg("img-service-03.jpg").c-hero-block-square__image-img
+          .l-container
+            +e.content
+              +e.inner
+                +e.number 03
+                h3.c-heading.is-sm.is-bottom 楽器ケースを<span class="is-color-primary">無料</span>でお貸しします
+                p.u-mbs.is-top.is-xs.
+                  コントラバスケースやハープケースなどをお持ちでないお客様には、無料にてケースをお貸しいたします。運搬申し込み時にご予約いただければ、運搬日にお持ちいたします。<br>
+                  ※お申し込み順となりますので、予めご了承ください。
+    section.l-section
+      +c.image
+        .l-container
+            .row
+              .large-10.is-push-lg-1.small-12
+                h2.c-heading.is-line-bottom IMAGE
+                h2.c-heading.is-lg.is-first-color 楽器搭載イメージ
+                p.c-image__text.u-text-center.
+                  ※以下はあくまでイメージです。<br>
+                  実際の積込はケースに入れた楽器を緩衝材にて保護し、固定いたします。
+                +e.img.u-text-center: +img("img-image-01.jpg")
+                +e.button.u-text-center.u-mbs.is-top.is-xlg
+                  +a("/instrument-form/").c-button.is-lg 楽器運搬を申し込む
   +l_offer
 

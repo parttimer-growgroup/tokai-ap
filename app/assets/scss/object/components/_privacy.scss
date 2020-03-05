@@ -1,0 +1,36 @@
+.c-privacy{
+  &__first-text{
+    margin-bottom: rem-calc(36);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(36)/2;
+    }
+  }
+  &__title{
+    font-size: rem-calc(18);
+    font-weight: bold;
+  }
+  &__text{
+    margin: rem-calc(10) 0 rem-calc(25);
+  }
+  &__list{
+    margin-bottom: rem-calc(25);
+
+    &-item{
+      position: relative;
+      padding-left: rem-calc(10);
+
+      &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 5px;
+        height: 5px;
+        background: $color-black;
+        border-radius: 50%;
+      }
+    }
+  }
+}

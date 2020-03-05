@@ -1,0 +1,116 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "cargo-form" // ページのID
+  - current.title = "楽器運搬についてのお問い合わせ" // タイトル
+  - current.description = "これは楽器運搬についてのお問い合わせについての説明文です" // 説明文
+  - current.bodyClass = "cargo-form" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header("img-page-header-cargo-form.jpg","一般貨物についてのお問い合わせ")
+  +c_breadcrumb()
+
+block body
+  main.l-main
+    section.l-section.is-lg
+      +c.columes-message
+        .l-container
+            .row
+                +a("#").c-columes-message__box
+                  +e.box-content
+                    +e.box-title.is-phone
+                    +e.box-phone TEL.052-804-5420
+                    +e.box-text 【電話受付時間】平日00：00～00：00
+    section.l-section.is-lg
+      .l-container
+        h2.c-heading.is-lg メールフォーム
+        p.u-mbs.is-top.is-sm.u-text-center.l-container.
+          各項目入力後、画面下部の【確認画面へ】 ボタンをクリックしていただきますと、入力内容を確認していただけます。<br>
+          内容を確認後、【送信】ボタンを押して下さい。
+        +c.forms.u-mbs.is-top.is-lg
+          .row
+            .large-10.small-12.is-push-lg-1
+              +e.block
+                +e.title
+                  | お問い合わせ項目
+                  span.c-forms__label 必須
+                +e.content
+                  +e.radio
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ項目",value="お申し込み",checked,required)
+                        span お申し込み
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ項目",value="お見積り依頼")
+                        span お見積り依頼
+              +e.block
+                +e.title.is-vertical-top
+                  | その他特記事項
+                  span.c-forms__label 必須
+                +e.content
+                  textarea(name="テキストエリア",placeholder="その他特記事項を入力してください")
+              +e.block
+                +e.title
+                  | 学校名・団体名
+                +e.content
+                  input(type="text",name="学校名・団体名",placeholder="団体名を入力してください")
+              +e.block
+                +e.title
+                  | ご担当者氏名
+                  span.c-forms__label 必須
+                +e.content
+                  input(type="text",name="ご担当者氏名",placeholder="ご氏名を入力してください",required)
+              +e.block
+                +e.title
+                  | ご担当者氏名フリガナ
+                  span.c-forms__label 必須
+                +e.content
+                  input(type="text",name="ご担当者氏名フリガナ",placeholder="フリガナを入力してください",required)
+              +e.block
+                +e.title
+                  | TEL
+                  span.c-forms__label 必須
+                +e.content
+                  input(type="text",name="TEL",placeholder="電話番号を入力してください",required)
+              +e.block
+                +e.title
+                  | メールアドレス
+                +e.content
+                  input(type="text",name="メールアドレス",placeholder="メールアドレスを入力してください",required)
+              +e.block
+                +e.title
+                  | ご連絡方法
+                  span.c-forms__label 必須
+                +e.content
+                  +e.radio
+                    span
+                      label
+                        input(type="radio",name="ご連絡方法",value="TEL",checked,required)
+                        span TEL
+                    span
+                      label
+                        input(type="radio",name="ご連絡方法",value="E-mail")
+                        span E-mail
+                    span
+                      label
+                        input(type="radio",name="ご連絡方法",value="どちらでも可")
+                        span どちらでも可
+              +e.privacy.u-text-center.u-mbs.is-top
+                input(type="checkbox",name="個人情報保護の取り扱いの内容に同意する",value="確認しました")#privacy-policy
+                label(for="privacy-policy")
+                  +a("/privacy-policy/") 個人情報保護の取り扱い
+                  | の内容に同意する
+              +e.submit
+                button.c-button.is-lg 確認画面へ
+
+              +e.submit.is-two-columns
+                .row
+                  .large-3.is-push-lg-3.small-6
+                    button.c-button.is-lg.is-secondary.is-arrow-left 戻る
+                  .large-3.small-6
+                    button.c-button.is-lg 送信する
+
+
+
+

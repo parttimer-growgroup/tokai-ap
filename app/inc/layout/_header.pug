@@ -1,18 +1,32 @@
-.l-header
-  .l-header__inner
-    .l-header__content
-      if current.id == 'top'
+if current.id  == 'top'
+  .l-header.is-top
+    .l-header__inner
+      .l-header__content
         h1.l-header_heading: +a("/"): +img("logo.png","有限会社東海アプローチ")
-      else
-        .l-header__heading: +a("/"): +img("logo.png","有限会社東海アプローチ")
-    nav.l-header__nav
-      ul
-        li: +a("/company/") 会社情報
-        li: +a("/nstrument/") 楽器運搬
-        li: +a("/cargo/") 一般貨物
-        li: +a("/instrument-form/").l-header__button 楽器運搬のお問い合わせ
-        li: +a("/cargo-form/").l-header__button 一般貨物のお問い合わせ
-        li
-          a(href="tel: 00-0000-0000").l-header__tel
-            span <i class="fa fa-phone" aria-hidden="true"></i>052-804-5420
-            small 受付時間 00:00〜00:00（平日）
+      nav.l-header__nav
+        ul
+          li: +a("/company/") 会社情報
+          li: +a("/nstrument/") 楽器運搬
+          li: +a("/cargo/") 一般貨物
+          li: +a("/instrument-form/").l-header__button 楽器運搬のお問い合わせ
+          li: +a("/cargo-form/").l-header__button 一般貨物のお問い合わせ
+          li
+            a(href="tel: 00-0000-0000").l-header__tel
+              span <i class="fa fa-phone" aria-hidden="true"></i>052-804-5420
+              small 受付時間 00:00〜00:00（平日）
+else
+  .l-header
+    .l-header__inner
+      .l-header__content
+        h1.l-header_heading: +a("/"): +img("logo.png","有限会社東海アプローチ")
+      nav.l-header__nav
+        ul
+          li: +a("/company/") 会社情報
+          li: +a("/nstrument/") 楽器運搬
+          li: +a("/cargo/") 一般貨物
+          li: +a("/instrument-form/").l-header__button 楽器運搬のお問い合わせ
+          li: +a("/cargo-form/").l-header__button 一般貨物のお問い合わせ
+          li
+            a(href="tel: 00-0000-0000").l-header__tel
+              span <i class="fa fa-phone" aria-hidden="true"></i>052-804-5420
+              small 受付時間 00:00〜00:00（平日）

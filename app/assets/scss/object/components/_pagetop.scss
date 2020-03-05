@@ -20,5 +20,10 @@
     padding-bottom: 6px;
     text-align: center;
     transition: all .3s;
+    &:hover{
+      transform: translateY(-10px);
+      transition: all .3s;
+      opacity: .6;
+    }
   }
 }

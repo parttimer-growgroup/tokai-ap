@@ -93,6 +93,7 @@
     left: 0;
     margin: auto;
     text-align: center;
+    width: 50%;
     @include breakpoint(1100 down) {
       position: relative;
       margin: 0;

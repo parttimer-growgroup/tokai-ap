@@ -1,0 +1,355 @@
+extends /inc/foundation/_base.pug
+block append config
+    - current.id = "instrument-form" // ページのID
+    - current.title = "楽器運搬についてのお問い合わせ" // タイトル
+    - current.description = "これは楽器運搬についてのお問い合わせについての説明文です" // 説明文
+    - current.bodyClass = "instrument-form" // body に付与するクラス
+    - current.depth = 2 // ページの階層
+
+block page_header
+    +l_page_header("img-page-header-instrument-form.jpg","楽器運搬についてのお問い合わせ")
+    +c_breadcrumb()
+
+block body
+    main.l-main
+        section.l-section.is-lg
+            +c.columes-message
+                .l-container
+                    .row
+                        .large-5.small-12.is-push-lg-1
+                            +a("#").c-columes-message__box
+                                +e.box-content
+                                    +e.box-title.is-phone
+                                    +e.box-phone TEL.052-804-5420
+                                    +e.box-text 【電話受付時間】平日00：00～00：00
+                        .large-5.small-12
+                            +a("../faxpaper.pdf/")(target="_blank").c-columes-message__box
+                                +e.box-content
+                                    +e.box-title.is-fax
+                                    +e.box-phone TEL.052-804-2421
+                                    +e.box-load お申し込みフォームダウンロードはこちら
+        section.l-section.is-lg
+            .l-container
+                h2.c-heading.is-lg メールフォーム
+                p.u-mbs.is-top.is-sm.u-text-center.l-container.
+                    各項目入力後、画面下部の【確認画面へ】 ボタンをクリックしていただきますと、入力内容を確認していただけます。<br>
+                    内容を確認後、【送信】ボタンを押して下さい。
+                +c.forms.u-mbs.is-top.is-lg
+                    .row
+                        .large-10.small-12.is-push-lg-1
+                            .u-mbs.is-bottom.is-sm.c-heading.is-sm.u-text-left 基本情報
+                            +e.block
+                                +e.title
+                                    | お問い合わせ項目
+                                    span.c-forms__label 必須
+                                +e.content
+                                    +e.radio
+                                        span
+                                            label
+                                                input(type="radio",name="お問い合わせ項目",value="お申し込み",checked,required)
+                                                span お申し込み
+                                        span
+                                            label
+                                                input(type="radio",name="お問い合わせ項目",value="お見積り依頼")
+                                                span お見積り依頼
+                            +e.block
+                                +e.title
+                                    | 学校名・団体名
+                                +e.content
+                                    input(type="text",name="学校名・団体名",placeholder="団体名を入力してください")
+                            +e.block
+                                +e.title
+                                    | ご担当者氏名
+                                    span.c-forms__label 必須
+                                +e.content
+                                    input(type="text",name="ご担当者氏名",placeholder="ご氏名を入力してください",required)
+                            +e.block
+                                +e.title
+                                    | ご担当者氏名フリガナ
+                                    span.c-forms__label 必須
+                                +e.content
+                                    input(type="text",name="ご担当者氏名フリガナ",placeholder="フリガナを入力してください",required)
+                            +e.block
+                                +e.title
+                                    | TEL
+                                    span.c-forms__label 必須
+                                +e.content
+                                    input(type="text",name="TEL",placeholder="電話番号を入力してください",required)
+                            +e.block
+                                +e.title
+                                    | 携帯電話
+                                +e.content
+                                    input(type="text",name="携帯電話",placeholder="携帯電話番号を入力してください")
+                            +e.block
+                                +e.title
+                                    | FAX
+                                +e.content
+                                    input(type="text",name="FAX",placeholder="メールアドレスを入力してください")
+                            +e.block
+                                +e.title
+                                    | メールアドレス
+                                    span.c-forms__label 必須
+                                +e.content
+                                    input(type="text",name="メールアドレス",placeholder="メールアドレスを入力してください",required)
+                            +e.block
+                                +e.title
+                                    | ご連絡方法
+                                    span.c-forms__label 必須
+                                +e.content
+                                    +e.radio
+                                        span
+                                            label
+                                                input(type="radio",name="ご連絡方法",value="TEL",checked,required)
+                                                span TEL
+                                        span
+                                            label
+                                                input(type="radio",name="ご連絡方法",value="E-mail")
+                                                span E-mail
+                                        span
+                                            label
+                                                input(type="radio",name="ご連絡方法",value="どちらでも可")
+                                                span どちらでも可
+                            +e.block
+                                +e.title
+                                    | お支払い方法
+                                    span.c-forms__label 必須
+                                +e.content
+                                    +e.radio
+                                        span
+                                            label
+                                                input(type="radio",name="お支払い方法",value="振込",checked,required)
+                                                span 振込
+                                        span
+                                            label
+                                                input(type="radio",name="お支払い方法",value="現金")
+                                                span 現金
+                            +e.block
+                                +e.title
+                                    | 往路
+                                    span.c-forms__label 必須
+                                +e.content
+                                    span.title 出発地（積込場所の会場名・施設名もしくは住所）
+                                    input(type="text",name="往路",placeholder="施設名を入力してください",required)
+                                    span.title 積込日時（※楽器積込約30分）
+                                    +e.content-flex
+                                        select(type="select",name="月",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 12; i++)
+                                            option(value=i)=i
+                                        span 月
+                                        select(type="select",name="日",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 31; i++)
+                                            option(value=i)=i
+                                        span 日
+                                        <br class="dn-w">
+                                        select(type="select",name="時",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 24; i++)
+                                            option(value=i)=i
+                                        span 時
+                                        select(type="select",name="分",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 59; i++)
+                                            option(value=i)=i
+                                        span 分より積込開始
+                                    span.title 到着地（降ろし場所の会場名・施設名もしくは住所）
+                                    input(type="text",name="往路",placeholder="施設名を入力してください",required)
+                                    span.title 到着日時
+                                        +e.content-flex
+                                            select(type="select",name="月",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 12; i++)
+                                                option(value=i)=i
+                                            span 月
+                                            select(type="select",name="日",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 31; i++)
+                                                option(value=i)=i
+                                            span 日
+                                            select(type="select",name="時",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 24; i++)
+                                                option(value=i)=i
+                                            span 時
+                                            select(type="select",name="分",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 59; i++)
+                                                option(value=i)=i
+                                            span 分
+                            +e.block
+                                +e.title
+                                    | 復路
+                                    span.c-forms__label 必須
+                                +e.content
+                                    span.title 出発地（積込場所の会場名・施設名もしくは住所）
+                                    input(type="text",name="往路",placeholder="施設名を入力してください",required)
+                                    span.title 積込日時（※楽器積込約30分）
+                                    +e.content-flex
+                                        select(type="select",name="月",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 12; i++)
+                                            option(value=i)=i
+                                        span 月
+                                        select(type="select",name="日",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 31; i++)
+                                            option(value=i)=i
+                                        span 日
+                                        select(type="select",name="時",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 24; i++)
+                                            option(value=i)=i
+                                        span 時
+                                        select(type="select",name="分",placeholder="",required)
+                                            option(value="")
+                                            - for(var i = 1; i <= 59; i++)
+                                            option(value=i)=i
+                                        span 分より積込開始
+                                    span.title 到着地（降ろし場所の会場名・施設名もしくは住所）
+                                    input(type="text",name="往路",placeholder="施設名を入力してください",required)
+                                    span.title 到着日時
+                                        +e.content-flex
+                                            select(type="select",name="月",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 12; i++)
+                                                option(value=i)=i
+                                            span 月
+                                            select(type="select",name="日",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 31; i++)
+                                                option(value=i)=i
+                                            span 日
+                                            select(type="select",name="時",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 24; i++)
+                                                option(value=i)=i
+                                            span 時
+                                            select(type="select",name="分",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 59; i++)
+                                                option(value=i)=i
+                                            span 分
+                            +e.block
+                                +e.title.is-vertical-top
+                                    | その他特記事項
+                                +e.content
+                                    textarea(name="テキストエリア",placeholder="その他特記事項を入力してください")
+                            .u-mbs.is-top.is-lg <span class="c-heading is-sm u-text-left">楽器の種類</span><span class="is-bg-denger">必須</span>※現時点で分かっている数量で構いません。
+                            +e.name 弦楽器
+                            +e.number-box
+                                +e.number-item
+                                    span コントラバス
+                                    input(type="number",name="コントラバス")
+                                +e.number-item
+                                    span チェロ
+                                    input(type="number",name="チェロ")
+                                +e.number-item
+                                    span ヴィオラ
+                                    input(type="number",name="ヴィオラ")
+                                +e.number-item
+                                    span ヴァイオリン
+                                    input(type="number",name="ヴァイオリン")
+                                +e.number-item
+                                    span ハープ
+                                    input(type="number",name="ハープ")
+                            +e.name 打楽器
+                            +e.number-box
+                                +e.number-item
+                                    span マリンバ
+                                    input(type="number",name="マリンバ")
+                                +e.number-item
+                                    span ドラムセット
+                                    input(type="number",name="ドラムセット")
+                                +e.number-item
+                                    span シロフォン
+                                    input(type="number",name="シロフォン")
+                                +e.number-item
+                                    span スネアドラム
+                                    input(type="number",name="スネアドラム")
+                                +e.number-item
+                                    span ビブラフォン
+                                    input(type="number",name="ビブラフォン")
+                                +e.number-item
+                                    span ドラ
+                                    input(type="number",name="ドラ")
+                                +e.number-item
+                                    span グロッケン
+                                    input(type="number",name="グロッケン")
+                                +e.number-item
+                                    span シンバル
+                                    input(type="number",name="シンバル")
+                                +e.number-item
+                                    span ティンパニー
+                                    input(type="number",name="ティンパニー")
+                                +e.number-item
+                                    span コンガ
+                                    input(type="number",name="コンガ")
+                                +e.number-item
+                                    span チャイム
+                                    input(type="number",name="チャイム")
+                                +e.number-item
+                                    span チェレスタ
+                                    input(type="number",name="チェレスタ")
+                                +e.number-item
+                                    span バズドラム
+                                    input(type="number",name="バズドラム")
+                            +e.name 管楽器
+                            +e.number-box
+                                +e.number-item
+                                    span チューバ
+                                    input(type="number",name="チューバ")
+                                +e.number-item
+                                    span ユーフォニウム
+                                    input(type="number",name="ユーフォニウム")
+                                +e.number-item
+                                    span ホルン
+                                    input(type="number",name="ホルン")
+                                +e.number-item
+                                    span トロンボーン
+                                    input(type="number",name="トロンボーン")
+                                +e.number-item
+                                    span トランペット
+                                    input(type="number",name="トランペット")
+                                +e.number-item
+                                    span クラリネット
+                                    input(type="number",name="クラリネット")
+                                +e.number-item
+                                    span アルトサックス
+                                    input(type="number",name="アルトサックス")
+                                +e.number-item
+                                    span バスクラリネット
+                                    input(type="number",name="バスクラリネット")
+                                +e.number-item
+                                    span テナーサックス
+                                    input(type="number",name="テナーサックス")
+                                +e.number-item
+                                    span ファゴット
+                                    input(type="number",name="ファゴット")
+                                +e.number-item
+                                    span バリトンサックス
+                                    input(type="number",name="バリトンサックス")
+                                +e.number-item
+                                    span コントラファゴット
+                                    input(type="number",name="コントラファゴット")
+                            +e.name その他楽器・備品・連絡事項
+                            +e.content.is-full.u-mbs.is-top.is-xs
+                                textarea(name="テキストエリア",placeholder="その他特記事項を入力してください")
+                            +e.privacy.u-text-center.u-mbs.is-top
+                                input(type="checkbox",name="個人情報保護の取り扱いの内容に同意する",value="確認しました")#privacy-policy
+                                label(for="privacy-policy")
+                                    +a("/privacy-policy/") 個人情報保護の取り扱い
+                                    | の内容に同意する
+                            +e.submit
+                                button.c-button.is-lg 確認画面へ
+
+                            +e.submit.is-two-columns
+                                .row
+                                    .large-3.is-push-lg-3.small-6
+                                        button.c-button.is-lg.is-secondary.is-arrow-left 戻る
+                                    .large-3.small-6
+                                        button.c-button.is-lg 送信する
+
+
+
+

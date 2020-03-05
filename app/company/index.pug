@@ -13,28 +13,33 @@ block page_header
 block body
   main.l-main
     section.l-section.is-lg
-      .l-container
-          h2.c-heading.is-lg ご挨拶
-          .row
-            .large-10.is-push-lg-1.small-12
-              .u-mbs.is-top.is-sm.u-text-center: +img("img-sample-00.png")
-              p.u-mbs.is-top.is-xs.
-                テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。<br>
-                テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。<br>
-                テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。<br>
-                テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。<br>
-                テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。<br>
-                テキストがここに入ります。テキストがここに入ります。
+      +c.comment
+        .l-container
+            h2.c-heading.is-line-bottom TOP MESSAGE
+            h2.c-heading.is-lg.is-first-color ご挨拶
+            .row
+              .large-10.is-push-lg-1.small-12
+                .u-mbs.is-top.is-sm.u-text-center: +img("img-sample-00.png")
+                p.u-mbs.is-top.is-xs.
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。
+                p.u-text-right.u-mbs.is-top.is-mid.c-comment__top
+                  <storng class="u-display-block">代表取締役 社長</storng>
+                  <span>浜島 達夫</span>
     section.l-section
       .l-container
-        h2.c-heading.is-lg ご挨拶
+        h2.c-heading.is-lg 会社概要
         .row
           .large-10.is-push-lg-1.small-12
             table.c-table
               tbody
                 tr
                   th 設立
-                  td 平成元年6年
+                  td 平成元年6月
                 tr
                   th 資本金
                   td 700万円

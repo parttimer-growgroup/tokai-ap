@@ -115,5 +115,12 @@
   &.is-bottom {
     margin-top: 0 !important;
   }
-
+  &.is-mid{
+    margin-top: rem-calc(40);
+    margin-bottom: rem-calc(40);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(40)/2;
+      margin-bottom: rem-calc(40)/2;
+    }
+  }
 }
