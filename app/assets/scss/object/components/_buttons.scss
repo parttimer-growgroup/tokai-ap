@@ -23,7 +23,7 @@ category: Buttons
   position: relative;
   transition: .3s all;
   font-weight: 700;
-
+  font-size: rem-calc(16);
   // *アイコン
   &:after {
     content: "\f105";
@@ -61,6 +61,7 @@ category: Buttons
     }
   }
   &.is-tel{
+    pointer-events: none;
     &::before{
       background: $color-primary;
       transition: .3s;

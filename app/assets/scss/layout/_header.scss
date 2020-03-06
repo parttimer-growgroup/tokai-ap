@@ -1,13 +1,20 @@
+.top{
+  position: relative;
+}
 .l-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: $color-white;
   width: 100%;
   z-index: 9990;
   padding: 0 rem-calc(32);
   height: 87px;
+  @include breakpoint(small only) {
+    position: relative;
+  }
   @include breakpoint(1000 down) {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
     width: 100%;
     padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
     height: rem-calc(55);
@@ -16,7 +23,6 @@
   &__inner{
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
     @include breakpoint(1000 down) {
       flex-wrap: wrap;
       margin-bottom: 0;
@@ -111,12 +117,20 @@
               transition: .3s all;
             }
           }
+          &.js-current-nav.is-current{
+            &::after{
+              width: 100%;
+              opacity: 1;
+            }
+          }
         }
       }
     }
   }
   &__tel{
     display: block;
+    pointer-events: none;
+    text-align: center;
     span{
       display: block;
       font-size: rem-calc(26);
@@ -181,6 +195,122 @@
       &:before{
         width: 100%;
         transition: .3s all;
+      }
+    }
+  }
+  //トップページデザイン
+  &.is-top{
+    background: transparent;
+    position: absolute;
+    .l-header__tel{
+      span{
+        color: $color-white;
+      }
+    }
+    .l-header_heading.is-logo-white{
+      display: block;
+    }
+    .l-header_heading.is-logo-color{
+      display: none;
+    }
+    & .l-header__button{
+      border-color: $color-white;
+    }
+    &.is-fixed{
+      position: fixed;
+      background: $color-white;
+      @include breakpoint(small only) {
+        position: relative;
+      }
+      .l-header_heading.is-logo-white{
+        display: none;
+      }
+      .l-header_heading.is-logo-color{
+        display: block;
+      }
+      .l-header__nav{
+        ul{
+          li{
+            a{
+              color: $color-black;
+            }
+            .l-header__button{
+              background: $color-primary;
+              border-color: $color-primary;
+            }
+          }
+        }
+      }
+      .l-header__tel{
+        span{
+          &:nth-of-type(1){
+            color: $color-primary;
+          }
+        }
+      }
+    }
+    .l-header__nav{
+      margin-left: auto;
+      @include breakpoint(950 down) {
+        display: none;
+      }
+      ul{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        li{
+          margin-left: rem-calc(12);
+          margin-right: 32px;
+          @include breakpoint(1368 down) {
+            margin-right: 16px;
+            margin-left: rem-calc(6);
+          }
+          @include breakpoint(1200 down) {
+            margin-right: 8px;
+            margin-left: rem-calc(2)
+          }
+          @include breakpoint(1100 down) {
+            margin-right: 4px;
+          }
+          a {
+            text-decoration: none;
+            font-size: rem-calc(14);
+            color: $color-white;
+            position: relative;
+            transition: all .3s ease;
+            background: transparent;
+            @include breakpoint(1368 down) {
+              font-size: rem-calc(12);
+            }
+            //装飾
+            &:after {
+              content: "";
+              position: absolute;
+              right: 0;
+              bottom: -38px;
+              left: 0;
+              margin: auto;
+              width: 0;
+              height: 4px;
+              background: $color-primary;
+              opacity: 0;
+              transition: .3s all;
+              @include breakpoint(1100 down) {
+                bottom: -23px;
+              }
+            }
+            //*hover
+            &:hover {
+              opacity: 1;
+              &:after {
+                width: 100%;
+                opacity: 1;
+                transition: .3s all;
+              }
+            }
+          }
+        }
       }
     }
   }

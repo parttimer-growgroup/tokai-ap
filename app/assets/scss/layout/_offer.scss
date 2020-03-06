@@ -30,11 +30,12 @@ category: Layout
   color: $color-black;
   padding: rem-calc(110) 0;
   @include breakpoint(small only) {
-    padding-bottom: rem-calc(68);
+    padding: 0;
   }
   &__inner{
     @include breakpoint(small only) {
       padding-top: rem-calc(80);
+      padding-bottom: rem-calc(68);
     }
   }
   &__text{

@@ -1,5 +1,8 @@
 .c-access{
   margin-bottom: rem-calc(114);
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(114)/2;
+  }
   &__map{
     display: block;
     width: 100%;

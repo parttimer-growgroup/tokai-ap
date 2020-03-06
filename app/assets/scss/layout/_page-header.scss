@@ -33,8 +33,13 @@ category: Layout
   height: rem-calc(330);
   position: relative;
   overflow: hidden;
+  margin-top: rem-calc(87);
+  @include breakpoint(midium down) {
+    margin-top: rem-calc(55);
+  }
   @include breakpoint(small only) {
     height: 44vw;
+    margin-top: 0;
   }
   &:after {
     content: "";

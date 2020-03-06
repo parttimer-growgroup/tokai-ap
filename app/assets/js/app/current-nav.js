@@ -10,7 +10,7 @@ var defaultOptions = {
 export default class CurrentNav {
 
   constructor(options) {
-    this.options = $.extend(defaultOptions, options)
+    this.options = $.extend(defaultOptions, options);
     this.init();
   }
 

@@ -289,14 +289,23 @@ category: Forms
       flex-wrap: wrap;
       @include breakpoint(small only) {
       }
-      select{
-        width: rem-calc(72);
-        @include breakpoint(small only) {
+    }
+    &-select{
+      display: flex;
+      align-items: center;
+      @include breakpoint(medium down) {
+        width: 45%;
+        margin-top: rem-calc(10);
+        &:nth-of-type(2n){
+          width: 55%;
         }
       }
+      select{
+        width: rem-calc(72);
+        margin-right: rem-calc(5);
+      }
       span{
-        display: block;
-        margin: 0 rem-calc(5) 0 rem-calc(10);
+        margin-right: rem-calc(10);
       }
     }
     & .title{

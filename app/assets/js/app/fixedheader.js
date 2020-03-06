@@ -13,10 +13,10 @@
  *
  */
 import  $ from "./jquery-shim.js"
-
+var mainHeight = $('.c-main-visual').height();
 var defaultOptions = {
     selector: '.js-fixedheader', // 実行するセレクタ
-    offset: 500, // 実行するオフセットピクセル数,
+    offset: mainHeight, // 実行するオフセットピクセル数,
     cssClass: ".l-global-navigation", // CSSが定義されているクラス
     activeClass: "is-fixed", // 有効な時に付与するクラス
     mobile: false // モバイル時にどう動作するか

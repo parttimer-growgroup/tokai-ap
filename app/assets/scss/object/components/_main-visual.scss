@@ -115,11 +115,11 @@ category: Components
 
 .c-main-visual {
   width: 100%;
-  height: calc(100vh - 87px);
+  height: 100vh;
   position: relative;
   &__image {
     width: 100%;
-    height: calc(100vh - 87px);
+    height: 100vh;
     top: 0;
     left: 0;
    @include bg-option();
@@ -143,8 +143,8 @@ category: Components
     margin: auto;
     z-index: 99;
     display: flex;
-    margin-top: rem-calc(88);
-    margin-left: rem-calc(77);
+    margin-top: rem-calc(175);
+    margin-left: rem-calc(102);
     @include breakpoint(medium down) {
       right: 0;
       bottom: 0;
@@ -304,14 +304,14 @@ category: Components
     }
     .owl-dot {
       margin: 0 rem-calc(6);
-      width: rem-calc(12);
-      height: rem-calc(12);
-      background-color: $color-white;
+      width: rem-calc(10);
+      height: rem-calc(10);
+      border: 1px solid $color-white;
       border-radius: 1000px;
       display: block;
       outline: none;
       &.active {
-        background-color: $color-primary!important;
+        background-color: $color-white!important;
       }
     }
   }

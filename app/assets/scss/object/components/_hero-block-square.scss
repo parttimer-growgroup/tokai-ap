@@ -201,7 +201,7 @@ category: SpecialComponents
   }
   .c-hero-block-square__content {
     margin-left: 0;
-    padding: rem-calc(56) 0 rem-calc(56) rem-calc(64);
+    padding: rem-calc(56) rem-calc(30) rem-calc(56) rem-calc(64);
     text-align: right;
     @include breakpoint(small only) {
       text-align: left;

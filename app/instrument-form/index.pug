@@ -15,19 +15,17 @@ block body
         section.l-section.is-lg
             +c.columes-message
                 .l-container
-                    .row
-                        .large-5.small-12.is-push-lg-1
-                            +a("#").c-columes-message__box
-                                +e.box-content
-                                    +e.box-title.is-phone
-                                    +e.box-phone TEL.052-804-5420
-                                    +e.box-text 【電話受付時間】平日00：00～00：00
-                        .large-5.small-12
-                            +a("../faxpaper.pdf/")(target="_blank").c-columes-message__box
-                                +e.box-content
-                                    +e.box-title.is-fax
-                                    +e.box-phone TEL.052-804-2421
-                                    +e.box-load お申し込みフォームダウンロードはこちら
+                    +e.block
+                        +e.box
+                            +e.box-content
+                                +e.box-icon.is-phone
+                                +e.box-tel TEL.052-804-5420
+                                +e.box-text 【電話受付時間】平日00：00～00：00
+                        +e.box
+                            +e.box-content
+                                +e.box-icon.is-fax
+                                +e.box-tel FAX.052-804-2421
+                                +a("../assets/pdf/faxpaper.pdf").c-columes-message__box-link お申し込みフォームダウンロードはこちら
         section.l-section.is-lg
             .l-container
                 h2.c-heading.is-lg メールフォーム
@@ -132,51 +130,58 @@ block body
                                     input(type="text",name="往路",placeholder="施設名を入力してください",required)
                                     span.title 積込日時（※楽器積込約30分）
                                     +e.content-flex
-                                        select(type="select",name="月",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 12; i++)
-                                            option(value=i)=i
-                                        span 月
-                                        select(type="select",name="日",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 31; i++)
-                                            option(value=i)=i
-                                        span 日
-                                        <br class="dn-w">
-                                        select(type="select",name="時",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 24; i++)
-                                            option(value=i)=i
-                                        span 時
-                                        select(type="select",name="分",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 59; i++)
-                                            option(value=i)=i
-                                        span 分より積込開始
+                                        +e.content-select
+                                            select(type="select",name="月",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 12; i++)
+                                                    option(value=i)=i
+                                            span 月
+                                        +e.content-select
+                                            select(type="select",name="日",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 31; i++)
+                                                    option(value=i)=i
+                                            span 日
+                                        +e.content-select
+                                            select(type="select",name="時",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 24; i++)
+                                                    option(value=i)=i
+                                            span 時
+                                        +e.content-select
+                                            select(type="select",name="分",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 59; i++)
+                                                    option(value=i)=i
+                                            span 分より積込開始
                                     span.title 到着地（降ろし場所の会場名・施設名もしくは住所）
                                     input(type="text",name="往路",placeholder="施設名を入力してください",required)
                                     span.title 到着日時
                                         +e.content-flex
-                                            select(type="select",name="月",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 12; i++)
-                                                option(value=i)=i
-                                            span 月
-                                            select(type="select",name="日",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 31; i++)
-                                                option(value=i)=i
-                                            span 日
-                                            select(type="select",name="時",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 24; i++)
-                                                option(value=i)=i
-                                            span 時
-                                            select(type="select",name="分",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 59; i++)
-                                                option(value=i)=i
-                                            span 分
+                                            +e.content-select
+                                                select(type="select",name="月",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 12; i++)
+                                                        option(value=i)=i
+                                                span 月
+                                            +e.content-select
+                                                select(type="select",name="日",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 31; i++)
+                                                        option(value=i)=i
+                                                span 日
+                                            +e.content-select
+                                                select(type="select",name="時",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 24; i++)
+                                                        option(value=i)=i
+                                                span 時
+                                            +e.content-select
+                                                select(type="select",name="分",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 59; i++)
+                                                        option(value=i)=i
+                                                span 分より積込開始
                             +e.block
                                 +e.title
                                     | 復路
@@ -186,50 +191,58 @@ block body
                                     input(type="text",name="往路",placeholder="施設名を入力してください",required)
                                     span.title 積込日時（※楽器積込約30分）
                                     +e.content-flex
-                                        select(type="select",name="月",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 12; i++)
-                                            option(value=i)=i
-                                        span 月
-                                        select(type="select",name="日",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 31; i++)
-                                            option(value=i)=i
-                                        span 日
-                                        select(type="select",name="時",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 24; i++)
-                                            option(value=i)=i
-                                        span 時
-                                        select(type="select",name="分",placeholder="",required)
-                                            option(value="")
-                                            - for(var i = 1; i <= 59; i++)
-                                            option(value=i)=i
-                                        span 分より積込開始
+                                        +e.content-select
+                                            select(type="select",name="月",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 12; i++)
+                                                    option(value=i)=i
+                                            span 月
+                                        +e.content-select
+                                            select(type="select",name="日",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 31; i++)
+                                                    option(value=i)=i
+                                            span 日
+                                        +e.content-select
+                                            select(type="select",name="時",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 24; i++)
+                                                    option(value=i)=i
+                                            span 時
+                                        +e.content-select
+                                            select(type="select",name="分",placeholder="",required)
+                                                option(value="")
+                                                - for(var i = 1; i <= 59; i++)
+                                                    option(value=i)=i
+                                            span 分より積込開始
                                     span.title 到着地（降ろし場所の会場名・施設名もしくは住所）
                                     input(type="text",name="往路",placeholder="施設名を入力してください",required)
                                     span.title 到着日時
                                         +e.content-flex
-                                            select(type="select",name="月",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 12; i++)
-                                                option(value=i)=i
-                                            span 月
-                                            select(type="select",name="日",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 31; i++)
-                                                option(value=i)=i
-                                            span 日
-                                            select(type="select",name="時",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 24; i++)
-                                                option(value=i)=i
-                                            span 時
-                                            select(type="select",name="分",placeholder="",required)
-                                                option(value="")
-                                                - for(var i = 1; i <= 59; i++)
-                                                option(value=i)=i
-                                            span 分
+                                            +e.content-select
+                                                select(type="select",name="月",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 12; i++)
+                                                        option(value=i)=i
+                                                span 月
+                                            +e.content-select
+                                                select(type="select",name="日",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 31; i++)
+                                                        option(value=i)=i
+                                                span 日
+                                            +e.content-select
+                                                select(type="select",name="時",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 24; i++)
+                                                        option(value=i)=i
+                                                span 時
+                                            +e.content-select
+                                                select(type="select",name="分",placeholder="",required)
+                                                    option(value="")
+                                                    - for(var i = 1; i <= 59; i++)
+                                                        option(value=i)=i
+                                                span 分より積込開始
                             +e.block
                                 +e.title.is-vertical-top
                                     | その他特記事項

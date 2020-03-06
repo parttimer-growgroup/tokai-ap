@@ -1,5 +1,8 @@
 .l-footer {
   margin-top: rem-calc(37);
+  @include breakpoint(small only) {
+    margin-top: rem-calc(42);
+  }
 
   & .row {
     position: relative;
@@ -18,10 +21,17 @@
 
   &__address {
     margin-top: rem-calc(20);
+    strong{
+      font-size: rem-calc(16);
+    }
   }
 
   &__tel {
     margin-top: rem-calc(9);
+    pointer-events: none;
+    a{
+      text-decoration: none;
+    }
   }
 
   &__menu {
@@ -96,7 +106,10 @@
     width: 50%;
     @include breakpoint(1100 down) {
       position: relative;
+      right: auto;
+      left: auto;
       margin: 0;
+      width: auto;
     }
   }
 
