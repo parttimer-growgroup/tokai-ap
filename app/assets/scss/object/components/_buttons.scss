@@ -62,6 +62,9 @@ category: Buttons
   }
   &.is-tel{
     pointer-events: none;
+    @include breakpoint(small only) {
+      pointer-events: auto;
+    }
     &::before{
       background: $color-primary;
       transition: .3s;

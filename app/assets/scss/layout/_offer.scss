@@ -49,11 +49,21 @@ category: Layout
     align-items: center;
     margin-left: -18px;
     margin-right: -18px;
-    @include breakpoint(small only) {
+    @include breakpoint(850 down) {
       margin: rem-calc(24) 0;
       display: block;
     }
     &--box{
+      width: rem-calc(268);
+      height: rem-calc(137);
+      @include breakpoint(850 down) {
+        margin: 10px auto;
+        width: 100%;
+      }
+      & .c-button{
+        padding: 20px 0 0;
+        height: 100%;
+      }
       @include breakpoint(small only) {
         width: 78%;
         margin: auto;
@@ -95,6 +105,7 @@ category: Layout
     }
     //->電話番号はアクセントフォント
     &.is-tel {
+      padding: 0;
       @include webfont-bold();
       line-height: 1;
       background: $color-white;
@@ -115,6 +126,12 @@ category: Layout
     }
     span{
       font-size: rem-calc(10);
+    }
+  }
+  &__time{
+    display: none;
+    @include breakpoint(small only) {
+
     }
   }
 }
@@ -149,58 +166,3 @@ category: Layout
         </div>
 ```
 */
-.l-offer {
-  // primary
-  &.is-color-primary {
-    background-image: none;
-    background-color: $color-primary;
-    padding: rem-calc(64) 0;
-    @include breakpoint(small only) {
-      padding: rem-calc(48) 0;
-    }
-    .c-heading {
-      color: $color-white;
-      margin-bottom: rem-calc(32);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
-      }
-    }
-    .l-offer__items {
-      margin-top: rem-calc(32);
-    }
-    .l-offer__box {
-      border: 1px solid $color-white;
-      height: 100%;
-      text-align: center;
-      padding: rem-calc(32) rem-calc(48);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(8);
-        height: inherit;
-        padding: rem-calc(24);
-      }
-    }
-    .l-offer__box-text {
-      font-size: rem-calc(14);
-      letter-spacing: 0.1em;
-      margin-bottom: rem-calc(20);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(12);
-      }
-    }
-    .l-offer__box-tel {
-      @include webfont-bold();
-      font-size: rem-calc(32);
-      line-height: 1;
-      i {
-        margin-right: rem-calc(8);
-      }
-      small {
-        display: block;
-        font-size: rem-calc(13);
-        letter-spacing: 0.1em;
-        font-weight: 400;
-        margin-top: rem-calc(8);
-      }
-    }
-  }
-}

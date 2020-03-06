@@ -9,6 +9,8 @@
     }
   }
   &__box{
+    text-decoration: none;
+    font-weight: normal;
     width: rem-calc(268);
     height: rem-calc(137);
     background: $color-primary;
@@ -17,11 +19,18 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    &.is-tel{
+      pointer-events: none;
+      @include breakpoint(small only) {
+        pointer-events: auto;
+        margin-bottom: 10px;
+      }
+      &:hover{
+        opacity: 1;
+      }
+    }
     @include breakpoint(650 down) {
       width: 100%;
-      &:nth-of-type(2){
-        margin-top: rem-calc(10);
-      }
     }
     &-content{}
     &-icon{

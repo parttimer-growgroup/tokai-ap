@@ -69,6 +69,7 @@ category: Heading
   line-height: 36/24*1;
   letter-spacing: 0.05em;
   color: $color-primary;
+  @include webfont;
   &::after{
     content: '';
     position: absolute;

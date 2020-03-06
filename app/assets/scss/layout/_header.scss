@@ -30,6 +30,11 @@
     }
   }
   &_heading{
+    &.is-logo-white{}
+    &.is-logo-color{
+      width: rem-calc(222);
+      height: rem-calc(44);
+    }
     @include breakpoint(1000 down) {
       width: rem-calc(148);
       margin: 0;

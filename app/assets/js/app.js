@@ -232,7 +232,7 @@ class App {
         }, 100);
         sr.reveal(".c-main-visual__title-img", {delay: 1200, scale: 1, duration: 2000, origin: 'bottom', distance: '50px',}, 100);
 
-        var blocks01 = $(".c-concept__txtbox");
+        var blocks01 = $(".c-concept__txtbox,.c-links__box");
         domEach(blocks01, function (key, item) {
             sr.reveal(item, {scale: 1,duration: 700,delay: 700}, 200);
             sr.reveal(item.children[1], {delay: 800, scale: 1,origin: 'bottom', distance: '20px'}, 300);
