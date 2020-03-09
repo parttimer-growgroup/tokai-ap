@@ -9,8 +9,8 @@ if current.id  == 'top'
           li: +a("/company/").js-current-nav 会社情報
           li: +a("/instrument/").js-current-nav 楽器運搬
           li: +a("/cargo/").js-current-nav 一般貨物
-          li.is-header__btn: +a("/instrument-form/").l-header__button.js-current-nav 楽器運搬のお問い合わせ
-          li.is-header__btn: +a("/cargo-form/").l-header__button.js-current-nav 一般貨物のお問い合わせ
+          li: +a("/instrument-form/").l-header__button.js-current-nav 楽器運搬のお問い合わせ
+          li.is-header__ml: +a("/cargo-form/").l-header__button.js-current-nav 一般貨物のお問い合わせ
           li
             a(href="tel: 00-0000-0000").l-header__tel
               span <i class="fa fa-phone" aria-hidden="true"></i>052-804-5420
@@ -25,8 +25,8 @@ else
           li: +a("/company/").js-current-nav 会社情報
           li: +a("/instrument/").js-current-nav 楽器運搬
           li: +a("/cargo/").js-current-nav 一般貨物
-          li.is-header__btn: +a("/instrument-form/").js-current-nav.l-header__button 楽器運搬のお問い合わせ
-          li.is-header__btn: +a("/cargo-form/").js-current-nav.l-header__button 一般貨物のお問い合わせ
+          li: +a("/instrument-form/").js-current-nav.l-header__button 楽器運搬のお問い合わせ
+          li.is-header__ml: +a("/cargo-form/").js-current-nav.l-header__button 一般貨物のお問い合わせ
           li
             a(href="tel: 00-0000-0000").l-header__tel
               span <i class="fa fa-phone" aria-hidden="true"></i>052-804-5420

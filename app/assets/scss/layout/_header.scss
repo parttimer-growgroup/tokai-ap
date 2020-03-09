@@ -76,6 +76,9 @@
       li{
         display: block;
         margin-left: rem-calc(42);
+        &.is-header__ml{
+          margin-left: rem-calc(21);
+        }
         @include breakpoint(1368 down) {
           margin-left: rem-calc(21);
         }
@@ -268,6 +271,9 @@
         li{
           display: block;
           margin-left: rem-calc(42);
+          &.is-header__ml{
+            margin-left: rem-calc(21);
+          }
           @include breakpoint(1368 down) {
             margin-left: rem-calc(21);
           }
