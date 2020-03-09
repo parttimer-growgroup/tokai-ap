@@ -7,12 +7,12 @@ $color-white: #fff !default; // 白
 $color-black: #000 !default; // 黒
 
 // # プライマリ
-$color-primary: #65A04D !default; // プライマリカラー
+$color-primary: #1F5AB2 !default; // プライマリカラー
 $color-primary-dark: darken($color-primary, 10) !default; // 濃いプライマリカラー
 $color-primary-light: lighten($color-primary, 10) !default; // 薄いプライマリカラー
 
 // # セカンダリー
-$color-secondary: #F9F7F0 !default; // セカンダリカラー
+$color-secondary: #183D7B !default; // セカンダリカラー
 $color-secondary-dark: darken($color-secondary, 10) !default; // 濃いセカンダリカラー
 $color-secondary-light: lighten($color-secondary, 10) !default; // 薄いセカンダリカラー
 
@@ -51,11 +51,11 @@ $grid-column-responsive-gutter: (// カラムとカラムの間隔
 );
 
 // # 3. font
-$font-base-size: 16px !default; // body のフォントサイズ
+$font-base-size: 14px !default; // body のフォントサイズ
 $font-base-line-hight: 1.75 !default; // body のフォントサイズ
 $font-base-letter-spacing: 0.1em !default; // body のフォントサイズ
-$font-base-color: #333 !default; // body のフォントカラー
-$font-base-family: 'Noto Sans JP', sans-serif !default; // フォントファミリー
+$font-base-color: #000 !default; // body のフォントカラー
+$font-base-family: 'Noto Sans CJK', sans-serif !default; // フォントファミリー
 $font-base-weight: normal !default; // フォント幅
 $font-base-style: normal !default; // フォントスタイル
 
@@ -98,7 +98,7 @@ $margin-xs: $margin-base !default;
 
 // # 5. border
 
-$border-base-color: #CCC;
+$border-base-color: $color-primary;
 $border-base-width: 1px !default;
 
 $border-radius: 3px !default;
@@ -114,6 +114,7 @@ $breakpoints: (
         small: 0,
         medium: 750px,
         large: 950px,
+        mdlarge: 1100px,
         xlarge: 1140px,
         xxlarge: 1440px,
 ) !default;

@@ -14,17 +14,17 @@ category: Buttons
   outline: none;
   display: inline-block;
   width: 100%;
-  max-width: rem-calc(203);
   text-align: center;
   background-color: $color-primary;
   color: $color-white;
   border: 1px solid $color-primary;
   text-decoration: none;
-  border-radius: 4px;
   padding: rem-calc(13) rem-calc(24);
   position: relative;
-  transition: all .3s;
+  transition: .3s all;
   font-weight: 700;
+  font-size: rem-calc(16);
+  line-height: 24/16*1;
   // *アイコン
   &:after {
     content: "\f105";
@@ -35,14 +35,102 @@ category: Buttons
     right: rem-calc(16);
     transform: translateY(-50%);
     font-weight: 400;
+    transition: .3s all;
   }
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 0;
+    height: 100%;
+    background: $color-white;
+    z-index: -1;
+    transition: .3s;
+    }
   // *hover
   &:hover {
     opacity: 1;
-    background-color: $color-white;
+    z-index: 1;
     color: $color-primary;
+    transition: .3s;
+    &:before{
+      width: 100%;
+      transition: .3s;
+    }
   }
-
+  &.is-tel{
+    pointer-events: none;
+    border: none;
+    @include breakpoint(small only) {
+      pointer-events: auto;
+    }
+    &::before{
+      background: $color-primary;
+      transition: .3s;
+    }
+    &:hover{
+      &:before{
+        color: $color-white;
+        transition: .3s;
+      }
+      & .l-offer-tel{
+        color: $color-white;
+        transition: .3s all;
+      }
+    }
+    &::after{
+      display: none;
+    }
+  }
+  &.is-icon{
+    max-width: rem-calc(268);
+    padding: rem-calc(20) 0;
+    @include breakpoint(small only) {
+      max-width: 100%;
+    }
+    & .btn-icon{
+      position: relative;
+      display: block;
+      margin: 0 auto rem-calc(8);
+      &.is-guitar{
+        background: url("../images/icon-guitar-01.png")no-repeat center center / cover;
+        width: 41px;
+        height: 41px;
+      }
+      &.is-box{
+        background: url("../images/icon-box-01.png")no-repeat center center / cover;
+        width: 35px;
+        height: 40px;
+      }
+      &.is-phone{
+        background: url("../images/icon-phone-01.png")no-repeat center center / cover;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &:hover{
+      .btn-icon{
+        &.is-guitar{
+          background: url("../images/icon-guitar-02.png")no-repeat center center / cover;
+        }
+        &.is-box{
+          background: url("../images/icon-box-02.png")no-repeat center center / cover;
+        }
+        &.is-phone{
+          background: url("../images/icon-phone-02.png")no-repeat center center / cover;
+        }
+      }
+      & .l-offer__tel{
+        color: $color-white;
+      }
+    }
+    &:after{
+      right: rem-calc(10)
+    }
+  }
   // width: 100%
   &.is-display-block {
     max-width: 100% !important;
@@ -117,23 +205,27 @@ category: Buttons
   }
   // -> 中
   &.is-lg {
-    max-width: rem-calc(356);
-    padding: rem-calc(16) rem-calc(24);
+    max-width: rem-calc(396);
+    padding: rem-calc(31) rem-calc(31);
     @include breakpoint(small only) {
       max-width: 100%;
+    }
+    &:after{
+      right: rem-calc(90);
     }
   }
   // -> 小
   &.is-sm {
     max-width: rem-calc(155);
-    padding: rem-calc(10) rem-calc(18);
+    padding: rem-calc(10) 0;
     font-size: rem-calc(14);
     letter-spacing: 0.1em;
+    color: $color-white;
     @include breakpoint(small only) {
       font-size: rem-calc(14)*0.9;
     }
     &:after {
-      right: rem-calc(10);
+      right: rem-calc(0);
     }
   }
   // -> 極小
@@ -157,6 +249,10 @@ category: Buttons
     &:hover {
       opacity: 0.6;
     }
+  }
+  &.is-tel{
+    background: $color-white;
+    color: $color-primary;
   }
 }
 /*

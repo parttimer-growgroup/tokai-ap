@@ -1,205 +1,124 @@
-/*
----
-name: フッター_サイトマップ型
-category: Layout
----
-```types.html
-<footer class="l-footer">
-      <div class="l-container">
-        <div class="l-footer__menu">
-          <div class="l-footer__block">
-            <ul class="l-footer__menulist">
-              <li><a href="/">ホーム</a>
-              </li>
-              <li><a href="/aboutus/">私たちについて</a>
-              </li>
-              <li><a href="/case/">導入事例</a>
-              </li>
-            </ul>
-          </div>
-          <div class="l-footer__block">
-            <div class="l-footer__menutitle"><span>企業情報</span></div>
-            <ul class="l-footer__menulist is-sub">
-              <li><a href="/company/greeting/">代表あいさつ</a>
-              </li>
-              <li><a href="/company/profile/">会社概要</a>
-              </li>
-              <li><a href="/company/history/">沿革</a>
-              </li>
-              <li><a href="/recruit/">採用情報</a>
-              </li>
-            </ul>
-          </div>
-          <div class="l-footer__block">
-            <div class="l-footer__menutitle"><span>事業紹介</span></div>
-            <ul class="l-footer__menulist is-sub">
-              <li><a href="/service/traning/">社員研修事業</a>
-              </li>
-              <li><a href="/service/project-management/">プロジェクトマネジメント事業</a>
-              </li>
-              <li><a href="/service/system/">システム開発事業</a>
-              </li>
-            </ul>
-          </div>
-          <div class="l-footer__block">
-            <div class="l-footer__menutitle"><span>お知らせ</span></div>
-            <ul class="l-footer__menulist is-sub">
-              <li><a href="/news/">更新情報</a>
-              </li>
-              <li><a href="/news/">ニュースリリース</a>
-              </li>
-            </ul>
-          </div>
-          <div class="l-footer__block">
-            <ul class="l-footer__menulist">
-              <li><a href="/blog/">企業ブログ</a>
-              </li>
-              <li><a href="/media/">企業メディア</a>
-              </li>
-              <li><a href="/faq/">よくあるご質問</a>
-              </li>
-              <li><a href="/voice/">お客様の声</a>
-              </li>
-              <li><a href="/contact/">お問い合わせ</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="l-footer__content"><a class="l-footer__logo" href="/"><img src="/dist/assets/images/logo-white.png" alt="ロゴ"></a>
-          <address class="l-footer__address">〒464-0850 <br>愛知県名古屋市千種区今池3丁目12-20 KAビル6F<br>TEL：052-753-6413 / FAX：052-753-6414</address><small class="l-footer__copyright">＠2019 サンプル Co.Ltd.</small>
-        </div>
-      </div>
-    </footer>
-```
-*/
-
 .l-footer {
-  background-color: $font-base-color;
-  color: $color-white;
-  &__menu {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-top: rem-calc(80);
-    padding-bottom: rem-calc(56);
-    @include breakpoint(medium down) {
-      display: block;
-      width: calc(100% + 32px);
-      margin-left: rem-calc(-16);
-      padding-top: rem-calc(0);
-      padding-bottom: rem-calc(0);
-    }
+  margin-top: rem-calc(37);
+  @include breakpoint(small only) {
+    margin-top: rem-calc(42);
   }
-  &__block {
-    padding-right: rem-calc(40);
-    @media (max-width: 900px) {
-      padding-right: rem-calc(24);
-      &:last-child {
-        padding-right: 0;
-      }
-    }
-    @include breakpoint(medium down) {
-      padding: 0;
-    }
+
+  & .row {
+    position: relative;
   }
-  &__menutitle {
-    margin-bottom: rem-calc(10);
-    font-weight: 400;
-    font-size: rem-calc(14);
-    @include breakpoint(medium down) {
-      border-bottom: 1px solid $border-base-color;
-      padding: rem-calc(12) rem-calc(24);
-      margin: 0;
-      background-color: $font-base-color;
-      &:before {
-        content: "\f107";
-        font-family: "FontAwesome";
-        color: $color-primary;
-        padding-right: rem-calc(12);
-      }
-      &.is-open {
-        &:before {
-          content: "\f106";
-        }
-      }
-    }
-  }
-  &__menulist {
-    li {
-      margin-bottom: rem-calc(20);
-      @include breakpoint(medium down) {
-        margin: 0!important;
-        border-bottom: 1px solid $border-base-color;
-      }
-      a {
-        color: $color-white;
-        text-decoration: none;
-        font-weight: 400;
-        font-size: rem-calc(14);
-        @include breakpoint(medium down) {
-          padding: rem-calc(14) rem-calc(24);
-          display: block;
-          background-color: $font-base-color;
-          &:hover {
-            opacity: 1;
-          }
-        }
-      }
-    }
-    &.is-sub {
-      @include breakpoint(medium down) {
-        display: none;
-      }
-      li {
-        margin-bottom: rem-calc(8);
-        @include breakpoint(medium down) {
-          border: none;
-        }
-        a {
-          font-weight: 400;
-          color: rgba($color-white,0.7);
-          @include breakpoint(medium down) {
-            background-color: rgba($font-base-color,0.8);
-            padding: rem-calc(10) rem-calc(44);
-          }
-        }
-      }
-    }
-  }
+
   &__content {
-    border-top: 1px solid rgba($border-base-color,0.2);
-    padding: rem-calc(40) 0;
+    width: rem-calc(460);
+    padding-bottom: rem-calc(40);
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    width: rem-calc(222);
+    height: rem-calc(44);
+  }
+
+  &__address {
+    margin-top: rem-calc(20);
+    strong{
+      font-size: rem-calc(16);
+    }
+  }
+
+  &__tel {
+    margin-top: rem-calc(9);
+    pointer-events: none;
+    a{
+      text-decoration: none;
+    }
+  }
+
+  &__menu {
+    margin-top: rem-calc(63);
+    @include breakpoint(950 down) {
+      display: none;
+    }
+  }
+
+  ul {
     display: flex;
     align-items: center;
-    @include breakpoint(medium down) {
-      display: block;
-      padding: rem-calc(24) 0;
+
+    &:nth-of-type(2) {
+      margin-top: rem-calc(30);
+    }
+
+    li {
+      margin-right: rem-calc(70);
+      min-width: 65px;
+      @include breakpoint(1368 down) {
+        margin-right: rem-calc(50);
+      }
+      @include breakpoint(1200 down) {
+        margin-right: rem-calc(30);
+      }
+      @include breakpoint(1100 down) {
+        margin-right: rem-calc(10);
+      }
+
+      &:nth-of-type(3) {
+        margin-right: 0;
+      }
+
+      a {
+        text-align: left;
+        display: block;
+        color: $color-black;
+        text-decoration: none;
+        position: relative;
+        transition: .3s;
+        &:hover{
+          opacity: .6;
+          transition: .3s;
+        }
+      }
     }
   }
-  &__logo {
+}
+
+.copyright {
+  padding: rem-calc(16) 0;
+  background: $color-primary;
+  color: $color-white;
+  position: relative;
+
+  & .row {
+    justify-content: flex-end;
+    position: relative;
+    @include breakpoint(1100 down) {
+      justify-content: space-between;
+    }
+  }
+
+  small {
     display: block;
-    width: 100%;
-    max-width: rem-calc(175);
-  }
-  &__address {
-    font-style: normal;
-    font-size: rem-calc(13);
-    letter-spacing: 0.1em;
-    margin-left: rem-calc(24);
-    @include breakpoint(medium down) {
-      margin: rem-calc(24) 0;
-      font-size: rem-calc(12);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    @include breakpoint(1100 down) {
+      position: relative;
+      right: auto;
+      left: auto;
+      margin: 0;
+      width: auto;
     }
   }
-  &__copyright {
-    opacity: 0.5;
-    margin-left: auto;
-    margin-top: rem-calc(12);
+
+  a {
     display: block;
-    font-size: rem-calc(12);
-    @include breakpoint(medium down) {
-      margin-top: 0;
-      text-align: center;
-    }
+    color: $color-white;
+    text-decoration: none;
+    font-weight: normal;
   }
 }

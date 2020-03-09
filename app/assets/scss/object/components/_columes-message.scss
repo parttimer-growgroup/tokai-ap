@@ -1,0 +1,78 @@
+.c-columes-message{
+  &__block{
+    display: flex;
+    width: rem-calc(600);
+    margin: auto;
+    @include breakpoint(650 down) {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__box{
+    text-decoration: none;
+    font-weight: normal;
+    width: rem-calc(268);
+    height: rem-calc(137);
+    background: $color-primary;
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    &.is-tel{
+      pointer-events: none;
+      @include breakpoint(small only) {
+        pointer-events: auto;
+        margin-bottom: 10px;
+      }
+      &:hover{
+        opacity: 1;
+      }
+    }
+    @include breakpoint(650 down) {
+      width: 100%;
+    }
+    &-content{}
+    &-icon{
+      margin: auto;
+      &.is-phone{
+        width: 41px;
+        height: 41px;
+        background: url("../images/icon-phone-02.png")no-repeat center center / cover;
+      }
+      &.is-fax{
+        width: 42px;
+        height: 46px;
+        background: url("../images/icon-fax-01.png")no-repeat center center / cover;
+      }
+    }
+    &-tel{
+      font-size: rem-calc(24);
+      letter-spacing: 0.05em;
+      line-height: 36/24*1;
+      font-family: Oswald;
+      @include breakpoint(650 down) {
+        font-size: rem-calc(20);
+        margin-top: rem-calc(10);
+      }
+    }
+    &-text{
+      font-size: rem-calc(10);
+      letter-spacing: 0.01em;
+      line-height: 15/10*1;
+      text-align: center;
+      @include breakpoint(650 down) {
+      }
+    }
+    &-link{
+      font-size: rem-calc(10);
+      display: block;
+      color: $color-white;
+      letter-spacing: 0.01em;
+      line-height: 15/10*1;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 400;
+    }
+  }
+}

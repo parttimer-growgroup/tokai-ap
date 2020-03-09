@@ -10,20 +10,14 @@ mixin c_slidebar
     span.c-slidebar-button__text.is-close 閉じる
   .c-slidebar-menu.js-slidebar-menu.is-top-to-bottom
     ul
-      li: +a("#") メニュー1
-      li: +a("#") メニュー2
-      li.c-slidebar-menu__parent.js-accordion
-        span(data-accordion-title="menu-title") メニュー3
-        ul.c-slidebar-menu__children(data-accordion-content="menu-text")
-          li: +a("#") メニュー3-1
-          li: +a("#") メニュー3-2
-          li: +a("#") メニュー3-3
-      li: +a("#") メニュー4
-      li: +a("#") メニュー5
-      li: +a("#") メニュー6
-    +a("#").c-slidebar-menu__button.c-button.is-contact お問い合わせ
-    .c-slidebar-menu__sns-btns
-      +a("#").c-slidebar-menu__sns-btn <i class="fa fa-twitter" aria-hidden="true"></i>
-      +a("#").c-slidebar-menu__sns-btn <i class="fa fa-facebook" aria-hidden="true"></i>
+      li: +a("/") ホーム
+      li: +a("/company/") 会社案内
+      li: +a("/instrument/") 楽器運搬
+      li: +a("/cargo/") 一般貨物
+    +a("/instrument-form/").c-slidebar-menu__button.c-button 楽器運搬お問い合わせ
+    +a("/cargo-form/").c-slidebar-menu__button.c-button 一般貨物お問い合わせ
+    +a(href="tel: 052-804-5420").c-slidebar-menu__tel
+      span <i class="fa fa-phone" aria-hidden="true"></i>052 - 804 - 5420
+      small 受付時間 00:00〜00:00（平日）
   //- スマホメニュー用のコンテナ
   .c-slidebar-container.js-slidebar-container.is-top-to-bottom

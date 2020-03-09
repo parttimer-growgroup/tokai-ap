@@ -33,8 +33,9 @@ category: Layout
   height: rem-calc(330);
   position: relative;
   overflow: hidden;
-  @include breakpoint(small only) {
-    height: 44vw;
+  margin-top: rem-calc(87);
+  @include breakpoint(1100 down) {
+    margin-top: 55px;
   }
   &:after {
     content: "";
@@ -75,6 +76,10 @@ category: Layout
     line-height: 1.2;
     letter-spacing: 0.06em;
     margin: 0;
+    display: inline-block;
+    border: 1px solid $color-white;
+    padding: rem-calc(16) rem-calc(31);
+    font-family: Noto Serif;
     @include breakpoint(small only) {
       font-size: rem-calc(42)/1.5;
     }

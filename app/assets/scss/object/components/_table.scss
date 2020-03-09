@@ -24,22 +24,23 @@ category: Base
 */
 .c-table {
   width: 100%;
-  border-top: 1px solid $border-base-color;
   tbody {
     th,
     td {
       text-align: left;
-      border-bottom: 1px solid $border-base-color;
-      padding: rem-calc(24);
+      border-bottom: 1px solid $color-gray-light;
+      padding: rem-calc(26) rem-calc(36);
       vertical-align: top;
       @include breakpoint(small only) {
         padding: rem-calc(12);
       }
     }
     th {
-      color: $color-primary;
+      color: $color-black;
       width: rem-calc(196);
       position: relative;
+      border-bottom:1px solid $border-base-color;
+      padding-left: rem-calc(15);
       @include breakpoint(small only) {
         width: rem-calc(96);
       }

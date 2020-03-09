@@ -1,0 +1,110 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "company" // ページのID
+  - current.title = "会社情報" // タイトル
+  - current.description = "これは会社情報についての説明文です" // 説明文
+  - current.bodyClass = "campany" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header("img-page-header-company.jpg","会社情報")
+  +c_breadcrumb()
+
+block body
+  main.l-main
+    section.l-section.is-lg
+      +c.comment
+        .l-container
+            h2.c-heading.is-line-bottom TOP MESSAGE
+            h2.c-heading.is-lg.is-first-color ご挨拶
+            .row
+              .large-10.is-push-lg-1.small-12
+                .u-mbs.is-top.is-sm.u-text-center: +img("img-sample-00.png")
+                p.u-mbs.is-top.is-xs.
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                  テキストがここに入ります。テキストがここに入ります。
+                p.u-text-right.u-mbs.is-top.is-mid.c-comment__top
+                  <storng class="u-display-block">代表取締役 社長</storng>
+                  <span>浜島 達夫</span>
+    section.l-section
+      .l-container
+        h2.c-heading.is-lg 会社概要
+        .row
+          .large-10.is-push-lg-1.small-12
+            table.c-table.u-mbs.is-top.is-xs
+              tbody
+                tr
+                  th 設立
+                  td 平成元年6月
+                tr
+                  th 資本金
+                  td 700万円
+                tr
+                  th 代表者
+                  td 代表取締役 浜島 達夫
+                tr
+                  th 許認可番号
+                  td.
+                    ■一般貨物自動車運送事業<br>
+                    ・中運自貨=第903号<br>
+                    ■貨物軽自動車運送事業<br>
+                    ・愛陸貨=第5927号
+                tr
+                  th 営業種目
+                  td.
+                    貸切便 定期便 緊急便<br>
+                    発送事業<br>
+                    月極定期契約<br>
+                    貨物の一時保管 / 荷役作業<br>
+                    運転代行など運送に関わる付随業務
+                tr
+                  th 取扱貨物
+                  td.
+                    ■一般貨物部門<br>
+                    ・印刷物（チラシ）、紙製品、雑貨品、引越等<br>
+                    ■楽器運搬部門<br>
+                    ・各種楽器（小中高等学校、大学等 吹奏楽器プロのソリスト、オーケストラから市民楽団まで）<br>
+                    ※楽器専用車（荷台2段仕様特別車）にて通常の約1.5倍の楽器を運搬可能です。
+                tr
+                  th 加盟団体
+                  td.
+                    ■（財） 愛知県トラック協会<br>
+                    ■（財）昭和法人会
+                tr
+                  th 加入保険<br>
+                  td 株式会社 損害保険ジャパン（総合運送保険）
+                tr
+                  th 保有車両
+                  td.
+                    4t ワイド ウイング パワーゲート エアサス車　2台<br>
+                    4t ウイング パワーゲート　1台<br>
+                    3.5t ウイング　1台<br>
+                    3t ウイング パワーゲート　2台<br>
+                    軽貨物車　1台<br>
+                    1.5t フォークリフト　1台
+                tr
+                  th 主な取引先
+                  td.
+                    ■一般貨物部門<br>
+                     ・広告代理店、印刷会社等<br>
+                    ■楽器運搬部門<br>
+                    ・愛知県小中高等学校、大学、専門学校、 市民オーケストラ、市民吹奏楽団など
+  section.l-section
+    .l-container
+      +c.access
+        h2.c-heading.is-lg アクセスマップ
+        .row
+          .large-10.is-push-lg-1.small-12
+            +e.map.u-mbs.is-xxs.is-top <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1170.745667240793!2d136.97513779251838!3d35.10835921071707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037b4c26759c7b%3A0xecd34e2c4113533!2z44CSNDY4LTAwMzgg5oSb55-l55yM5ZCN5Y-k5bGL5biC5aSp55m95Yy65bGx5qC555S677yT77yT77yV!5e0!3m2!1sja!2sjp!4v1583308371266!5m2!1sja!2sjp" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            +e.title.u-mbs.is-xs.is-top 有限会社東海アプローチ
+            +e.text.
+              〒468-0038 名古屋市天白区山根町335 永井ビルC<br>
+              貨物倉庫：名古屋市天白区山根320
+            +e.title.u-mbs.is-xxs.is-top 交通アクセス
+            +e.text 相生山駅から〇〇〇〇〇〇
+  +l_offer
+

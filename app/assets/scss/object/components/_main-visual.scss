@@ -116,15 +116,16 @@ category: Components
 .c-main-visual {
   width: 100%;
   position: relative;
+
   &__image {
     width: 100%;
-    height: rem-calc(620);
+    height: 100vh;
+    min-height: 500px;
+    max-height: 1080px;
     top: 0;
     left: 0;
    @include bg-option();
     @include breakpoint(medium down) {
-      height: 50vw;
-      min-height: 280px;
     }
     &:after {
       content: "";
@@ -139,32 +140,33 @@ category: Components
   }
   &__inner {
     position: absolute;
-    width: 100%;
-    top: 50%;
+    top: 0;
     left: 0;
-    transform: translateY(-50%);
+    margin: auto;
     z-index: 99;
-    text-align: center;
-    padding: 0 rem-calc(16);
-    margin-top: rem-calc(32);
+    display: flex;
+    margin-top: rem-calc(175);
+    margin-left: rem-calc(102);
     @include breakpoint(medium down) {
-      margin-top: rem-calc(8);
+      right: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
     }
   }
-  &__text {
-    margin-bottom: rem-calc(40);
+  &__title{
+    width: rem-calc(561);
+    height: rem-calc(211);
     @include breakpoint(small only) {
-      margin-bottom: 4vw;
+      width: rem-calc(346);
+      height: rem-calc(130);
     }
-    img {
-      width: 100%;
-      max-width: rem-calc(1048)/2;
-      height: auto;
-      margin:  0 auto;
-      @include breakpoint(medium down) {
-        width: 90%;
-        max-width: rem-calc(420);
-      }
+    &-img{
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
     }
   }
   &__button {
@@ -185,7 +187,7 @@ category: Components
     }
 
     .c-main-visual__image {
-      max-height: rem-calc(480);
+      max-height: 80vh;
       @include breakpoint(medium down) {
         min-height: 200px;
       }
@@ -292,7 +294,7 @@ category: Components
   // owl.calousel
   .owl-dots {
     position: absolute;
-    bottom: rem-calc(32);
+    bottom: rem-calc(50);
     left: 0;
     width: 100%;
     z-index: 99;
@@ -303,15 +305,15 @@ category: Components
       bottom: rem-calc(16);
     }
     .owl-dot {
-      margin: 0 rem-calc(6);
-      width: rem-calc(12);
-      height: rem-calc(12);
-      background-color: $color-white;
+      margin: 0 rem-calc(10);
+      width: rem-calc(10);
+      height: rem-calc(10);
+      border: 1px solid $color-white;
       border-radius: 1000px;
       display: block;
       outline: none;
       &.active {
-        background-color: $color-primary!important;
+        background-color: $color-white!important;
       }
     }
   }

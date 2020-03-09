@@ -8,6 +8,7 @@ import ResponsiveTable from './app/responsive-table.js';
 import Slidebar from './app/slidebar.js';
 import Tab from './app/tab.js';
 import CurrentNav from './app/current-nav.js';
+import ScrollReveal from "scrollreveal";
 import buildFormat from './app/format.js';
 import OwlCarousel from 'owl.carousel';
 
@@ -204,6 +205,59 @@ class App {
         menuSlide();
         owlCarousel();
     });
+    $(function(){
+        window.sr = ScrollReveal({duration: 600,mobile:false});
+        function domEach(items, callback) {
+            if (typeof items === "string") {
+                var items = $(items);
+            }
+            for (var i = 0; i < items.length; i++) {
+                var item = items[i];
+                // callback = callback.bind(item)
+                callback(i, item);
+            }
+        }
+
+
+        sr.reveal(".c-overview-block", {scale: 1, duration: 1600,origin:'bottom',distance: '50px',}, 100);
+        sr.reveal(".c-page-header", {delay: 400, scale: 1, duration: 2000, origin: 'bottom', distance: '50px',}, 100);
+        //lower
+        sr.reveal(".c-page-header", {delay: 400, scale: 1, duration: 2000, origin: 'bottom', distance: '50px',}, 100);
+        sr.reveal(".c-page-header__inner", {
+            delay: 800,
+            scale: 1,
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+        }, 100);
+        sr.reveal(".c-main-visual__title-img", {delay: 1200, scale: 1, duration: 2000, origin: 'bottom', distance: '50px',}, 100);
+
+        var blocks01 = $(".c-concept__txtbox,.c-links__box,.c-hero-block-square");
+        domEach(blocks01, function (key, item) {
+            sr.reveal(item, {scale: 1,duration: 300,delay: 100}, 200);
+            sr.reveal(item.children[1], {delay: 300, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+            sr.reveal(item.children[2], {delay: 400, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        });
+        // var blocks01 = $(".c-concept__txtbox");
+        // domEach(blocks01, function (key, item) {
+        //     sr.reveal(item, {scale: 1,duration: 700,delay: 700}, 200);
+        //     sr.reveal(item.children[1], {delay: 800, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[2], {delay: 900, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[3], {delay: 1000, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[4], {delay: 1100, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[5], {delay: 1200, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[6], {delay: 1300, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[7], {delay: 1400, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[8], {delay: 1500, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[9], {delay: 1600, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        //     sr.reveal(item.children[10], {delay: 1700, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+        // });
+        function myCallback (el) {
+            el.classList.add('is-animating');
+        }
+
+        ScrollReveal().reveal('#example', { beforeReveal: myCallback });
+    })
   }
 }
 

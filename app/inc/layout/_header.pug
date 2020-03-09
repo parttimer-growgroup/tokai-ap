@@ -1,20 +1,33 @@
-.l-header-minimal
-  .l-header-minimal__inner
-    .l-header-minimal__text テキストテキストテキストテキストテキスト
-    a(href="tel: 00-0000-0000").l-header-minimal__tel
-      span <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
-      small 受付時間 / 平日00：00～00：00
-  .l-header-minimal__content
-    if current.id == 'top'
-      h1.l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
-    else
-      .l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
-    nav.l-header-minimal__nav
-      ul
-        li: +a("/onecolumn/") 1COLUMN
-        li: +a("/twocolumns/") 2COLUMN
-        li: +a("/archive-onecolumn/") ARCHIVE1
-        li: +a("/archive-twocolumns/") ARCHIVE2
-        li: +a("/format/") FORMAT
-        li: +a("/recruit/") RECRUIT
-    +a("/contact/").l-header-minimal__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ
+if current.id  == 'top'
+  .l-header.is-top.js-fixedheader
+    .l-header__inner
+      .l-header__content
+          h1.l-header_heading.is-logo-white: +a("/"): +img("logo-white.png","有限会社東海アプローチ")
+          h1.l-header_heading.is-logo-color: +a("/"): +img("logo.png","有限会社東海アプローチ")
+      nav.l-header__nav
+        ul
+          li: +a("/company/").js-current-nav 会社情報
+          li: +a("/instrument/").js-current-nav 楽器運搬
+          li: +a("/cargo/").js-current-nav 一般貨物
+          li.is-header__btn: +a("/instrument-form/").l-header__button.js-current-nav 楽器運搬のお問い合わせ
+          li.is-header__btn: +a("/cargo-form/").l-header__button.js-current-nav 一般貨物のお問い合わせ
+          li
+            a(href="tel: 00-0000-0000").l-header__tel
+              span <i class="fa fa-phone" aria-hidden="true"></i>052-804-5420
+              small 受付時間 00:00〜00:00（平日）
+else
+  .l-header
+    .l-header__inner
+      .l-header__content
+        h1.l-header_heading.is-logo-color: +a("/"): +img("logo.png","有限会社東海アプローチ")
+      nav.l-header__nav
+        ul
+          li: +a("/company/").js-current-nav 会社情報
+          li: +a("/instrument/").js-current-nav 楽器運搬
+          li: +a("/cargo/").js-current-nav 一般貨物
+          li.is-header__btn: +a("/instrument-form/").js-current-nav.l-header__button 楽器運搬のお問い合わせ
+          li.is-header__btn: +a("/cargo-form/").js-current-nav.l-header__button 一般貨物のお問い合わせ
+          li
+            a(href="tel: 00-0000-0000").l-header__tel
+              span <i class="fa fa-phone" aria-hidden="true"></i>052-804-5420
+              small 受付時間 00:00〜00:00（平日）

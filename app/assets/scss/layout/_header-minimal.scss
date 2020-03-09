@@ -63,7 +63,6 @@ category: Layout
     }
   }
   &__tel {
-    display: flex;
     align-items: center;
     text-decoration: none;
     color: $font-base-color;
@@ -71,6 +70,7 @@ category: Layout
     line-height: 1.4;
     margin-left: rem-calc(20);
     margin-left: auto;
+    padding-bottom: 0 !important;
     @include breakpoint(medium down) {
       display: none;
     }
@@ -90,6 +90,7 @@ category: Layout
     small {
       font-size: rem-calc(13);
       letter-spacing: 0;
+      display: block;
     }
   }
   &__heading {
@@ -117,6 +118,7 @@ category: Layout
       display: flex;
       align-items: center;
       width: 100%;
+      padding: rem-calc(14) 0;
       li {
         margin-left: rem-calc(12);
         margin-right: 32px;
@@ -125,7 +127,6 @@ category: Layout
           color: $font-base-color;
           font-size: rem-calc(14);
           position: relative;
-          padding-bottom: rem-calc(36);
           transition: all .3s ease;
           //装飾
           &:after {
@@ -153,11 +154,12 @@ category: Layout
         }
       }
     }
+    &.js-current-nav{}
   }
   &__button {
     //*矢印削除
-    max-width: rem-calc(196)!important;
-    margin-left: rem-calc(24);
+    max-width: rem-calc(200)!important;
+    color: $color-white;
     @include breakpoint(medium down) {
       display: none;
     }

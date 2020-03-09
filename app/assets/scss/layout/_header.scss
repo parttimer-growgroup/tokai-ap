@@ -1,154 +1,323 @@
-/*
----
-name: ヘッダー_通常
-category: Layout
----
-```types.html
-<header class="l-header">
-          <div class="l-container">
-            <div class="l-header__inner">
-              <div class="l-header__heading"><a href="/"><img src="/dist/assets/images/logo.png" alt="株式会社サンプル"></a>
-              </div>
-              <div class="l-header__content">
-                <ul class="l-header__submenu">
-                  <li><a href="#"><i class="fa fa-hospital-o" aria-hidden="true"></i>医療機関様へ</a>
-                  </li>
-                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>交通アクセス</a>
-                  </li>
-                </ul><a class="l-header__tel" href="tel: 00-0000-0000"><span><i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000</span><small>受付時間 / 平日00：00～00：00</small></a><a class="l-header__button c-button is-sm" href="/contact/"><i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ</a>
-              </div>
-            </div>
-          </div>
-        </header>
-        <nav class="l-global-nav">
-          <div class="l-container">
-            <ul>
-              <li><a href="#">ホーム</a>
-              </li>
-              <li><a href="#">メニュー1</a>
-              </li>
-              <li><a href="#">メニュー2</a>
-              </li>
-              <li><a href="#">メニュー3</a>
-              </li>
-              <li><a href="#">メニュー4</a>
-              </li>
-              <li><a href="#">メニュー5</a>
-              </li>
-              <li><a href="#">メニュー6</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-```
-*/
-.l-header {
-  background-color: $color-white;
+.top{
+  position: relative;
+}
+.l-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $color-white;
   width: 100%;
   z-index: 9990;
-  padding: rem-calc(24) 0;
-  @include breakpoint(medium down) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: rem-calc(12) 0;
-    height: rem-calc(55);
+  padding: 0 rem-calc(32);
+  height: 87px;
+  @include breakpoint(small only) {
+    position: relative;
   }
-  &__inner {
+  @include breakpoint(1000 down) {
+    width: 100%;
+    padding: rem-calc(3) rem-calc(16) rem-calc(3) rem-calc(16);
+    height: rem-calc(55);
+    display: flex;
+  }
+  &__inner{
     display: flex;
     align-items: center;
+    @include breakpoint(1000 down) {
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+  &_heading{
+    &.is-logo-white{}
+    &.is-logo-color{
+      width: rem-calc(222);
+      height: rem-calc(44);
+    }
+    @include breakpoint(1000 down) {
+      width: rem-calc(148);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a{
+        display: flex;
+      }
+    }
   }
   &__heading {
     margin: 0;
-    width: rem-calc(418)/2;
-    @include breakpoint(medium down) {
-      width: rem-calc(418)/3;
+    width: rem-calc(175);
+    flex-shrink: 0;
+    @include breakpoint(1000 down) {
+      width: rem-calc(148);
+      margin: 0 !important;
     }
     a,
     img {
       display: block;
     }
   }
-  &__content {
+  &__content{
     display: flex;
-    width: 100%;
     align-items: center;
-    justify-content: flex-end;
-    @include breakpoint(medium down) {
+  }
+  &__nav{
+    margin-left: auto;
+    @include breakpoint(950 down) {
       display: none;
     }
-  }
-  &__submenu {
-    display: flex;
-    align-items: center;
-    li {
-      margin-left: 12px;
-      a {
+    ul{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+      li{
         display: block;
-        width: rem-calc(142);
-        color: $font-base-color;
-        border: 1px solid $color-primary;
-        text-decoration: none;
-        text-align: center;
-        background-color: $color-white;
-        font-size: rem-calc(13);
-        font-weight: 400;
-        border-radius: 1000px;
-        padding: 3px 8px;
-        i {
-          margin-right: 5px;
-          color: $color-primary;
+        margin-left: rem-calc(42);
+        @include breakpoint(1368 down) {
+          margin-left: rem-calc(21);
+        }
+        @include breakpoint(1200 down) {
+          margin-left: rem-calc(12)
+        }
+        @include breakpoint(1100 down) {
+          margin-left: rem-calc(6);
+        }
+        a {
+          text-decoration: none;
+          font-size: rem-calc(14);
+          color: $color-black;
+          position: relative;
+          transition: all .3s ease;
+          @include breakpoint(1368 down) {
+            font-size: rem-calc(12);
+          }
+          //装飾
+          &:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -40px;
+            left: 0;
+            margin: auto;
+            width: 0;
+            height: 4px;
+            background: $color-primary;
+            opacity: 0;
+            transition: .3s all;
+            @include breakpoint(1100 down) {
+              bottom: -23px;
+            }
+          }
+          //*hover
+          &:hover {
+            opacity: 1;
+            &:after {
+              width: 100%;
+              opacity: 1;
+              transition: .3s all;
+            }
+          }
+          &.js-current-nav.is-current{
+            &::after{
+              width: 100%;
+              opacity: 1;
+            }
+          }
         }
       }
     }
   }
-  &__tel {
+  &__tel{
     display: block;
-    text-decoration: none;
-    color: $font-base-color;
-    font-weight: 400;
-    line-height: 1.4;
-    margin-left: 20px;
-    @include breakpoint(medium down) {
-      display: none;
-    }
-    //電話番号
-    span {
-      color: $color-primary;
-      @include webfont();
-      font-size: 24px;
-      letter-spacing: 0.02em;
+    pointer-events: none;
+    text-align: center;
+    span{
       display: block;
-    }
-    //アイコン
-    i {
-      margin-right: 6px;
-    }
-    //受付時間
-    small {
-      font-size: 12px;
+      font-size: rem-calc(26);
       letter-spacing: 0.05em;
+      line-height: 39/26*1;
+      color: $color-primary;
+      font-family: 'Oswald', sans-serif;;
+      @include breakpoint(1368 down) {
+        font-size: rem-calc(23);
+      }
+      @include breakpoint(1200 down) {
+        font-size: rem-calc(18);
+      }
+      @include breakpoint(1100 down) {
+        font-size: rem-calc(14);
+      }
+    }
+    small{
       display: block;
+      text-align: center;
+      font-weight: 400;
+      font-size: rem-calc(10);
     }
   }
-  &__button {
-    //*矢印削除
-    max-width: rem-calc(196)!important;
-    margin-left: 24px;
-    &:after {
+  &__button{
+    display: block;
+    position: relative;
+    max-width: rem-calc(200);
+    background: $color-primary;
+    color: $color-white !important;
+    text-align: center;
+    padding: rem-calc(10) rem-calc(10);
+    border: 1px solid $color-primary;
+    transition: .3s all;
+    @include breakpoint(1368 down) {
+      padding: rem-calc(8);
+    }
+    @include breakpoint(1200 down) {
+      padding: rem-calc(4);
+    }
+    @include breakpoint(1100 down) {
+      padding: rem-calc(4);
+    }
+    &:after{
       display: none;
     }
-    //*アイコン
-    i {
-      font-size: 16px;
-      padding-right: 8px;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 0;
+      height: 100%;
+      background: $color-white;
+      z-index: -1;
+      transition: .3s all;
+    }
+    &:hover{
+      color: $color-primary !important;
+      z-index: 1;
+      opacity: 1;
+      transition: .3s all;
+      &:before{
+        width: 100%;
+        transition: .3s all;
+      }
+    }
+  }
+  //トップページデザイン
+  &.is-top{
+    background: transparent;
+    position: absolute;
+    .l-header__tel{
+      span{
+        color: $color-white;
+      }
+    }
+    .l-header_heading.is-logo-white{
+      display: block;
+    }
+    .l-header_heading.is-logo-color{
+      display: none;
+    }
+    & .l-header__button{
+      border-color: $color-white;
+    }
+    &.is-fixed{
+      position: fixed;
+      background: $color-white;
+      @include breakpoint(small only) {
+        position: relative;
+      }
+      .l-header_heading.is-logo-white{
+        display: none;
+      }
+      .l-header_heading.is-logo-color{
+        display: block;
+      }
+      .l-header__nav{
+        ul{
+          li{
+            a{
+              color: $color-black;
+            }
+            .l-header__button{
+              background: $color-primary;
+              border-color: $color-primary;
+            }
+          }
+        }
+      }
+      .l-header__tel{
+        span{
+          &:nth-of-type(1){
+            color: $color-primary;
+          }
+        }
+      }
+    }
+    .l-header__nav{
+      margin-left: auto;
+      @include breakpoint(950 down) {
+        display: none;
+      }
+      ul{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        li{
+          display: block;
+          margin-left: rem-calc(42);
+          @include breakpoint(1368 down) {
+            margin-left: rem-calc(21);
+          }
+          @include breakpoint(1200 down) {
+            margin-left: rem-calc(12)
+          }
+          @include breakpoint(1100 down) {
+            margin-left: rem-calc(6);
+          }
+          a {
+            text-decoration: none;
+            font-size: rem-calc(14);
+            color: $color-white;
+            position: relative;
+            transition: all .3s ease;
+            background: transparent;
+            @include breakpoint(1368 down) {
+              font-size: rem-calc(12);
+            }
+            //装飾
+            &:after {
+              content: "";
+              position: absolute;
+              right: 0;
+              bottom: -40px;
+              left: 0;
+              margin: auto;
+              width: 0;
+              height: 4px;
+              background: $color-primary;
+              opacity: 0;
+              transition: .3s all;
+              @include breakpoint(1100 down) {
+                bottom: -23px;
+              }
+            }
+            //*hover
+            &:hover {
+              opacity: 1;
+              &:after {
+                width: 100%;
+                opacity: 1;
+                transition: .3s all;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
-
-
-
-
 
 

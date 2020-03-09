@@ -24,22 +24,56 @@ category: Layout
 ```
 */
 .l-offer {
-  background-image: url("../images/bg-offer.jpg");
+  background-image: url("../images/bg-offer.png");
   @include bg-option();
   text-align: center;
-  color: $color-white;
-  padding: rem-calc(48) 0;
+  color: $color-black;
+  padding: rem-calc(110) 0;
   @include breakpoint(small only) {
-    padding: rem-calc(40) 0;
+    padding: 0;
   }
-  // padding大きめ
-  &.is-padding-lg {
-    padding: rem-calc(64) 0;
+  &__inner{
+    @include breakpoint(small only) {
+      padding-top: rem-calc(80);
+      padding-bottom: rem-calc(68);
+    }
+  }
+  &__text{
+    margin-top: rem-calc(22);
   }
   &__items {
     margin-top: rem-calc(48);
-    @include breakpoint(small only) {
-      margin-top: rem-calc(24);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: -18px;
+    margin-right: -18px;
+    @include breakpoint(850 down) {
+      margin: rem-calc(24) 0;
+      display: block;
+    }
+    &--box{
+      width: rem-calc(268);
+      height: rem-calc(137);
+      padding: 0 rem-calc(8) !important;
+      @include breakpoint(850 down) {
+        margin: 10px auto;
+        width: 100%;
+      }
+      & .c-button{
+        padding: 20px 0 0;
+        height: 100%;
+      }
+      @include breakpoint(small only) {
+        width: 78%;
+        margin: auto;
+      }
+      &:not(:nth-of-type(1)){
+        @include breakpoint(small only) {
+          margin-top: rem-calc(8);
+        }
+      }
     }
     // ボタン1つ
     &.is-button-one {
@@ -65,32 +99,19 @@ category: Layout
     position: relative;
     width: 100%;
     min-height: rem-calc(88);
-    @include breakpoint(small only) {
-      font-size: rem-calc(15);
-      min-height: rem-calc(64);
-    }
-    &:after {
-      content: "\f105";
-      font-family: "FontAwesome";
-      position: absolute;
-      font-size: rem-calc(20);
-      top: 50%;
-      right: rem-calc(24);
-      transform: translateY(-50%);
-      font-weight: 400;
-      @include breakpoint(small only) {
-        font-size: rem-calc(18);
-      }
-    }
+
     &.is-bgcolor-primary {
       background-color: $color-primary;
       border-color: $color-primary;
     }
     //->電話番号はアクセントフォント
     &.is-tel {
+      padding: 0;
       @include webfont-bold();
-      font-size: rem-calc(32);
       line-height: 1;
+      background: $color-white;
+      color: $color-primary;
+      border: none;
       @include breakpoint(small only) {
         font-size: rem-calc(28);
       }
@@ -99,16 +120,24 @@ category: Layout
       }
     }
   }
-  &__subtext {
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-top: rem-calc(14);
-    @include breakpoint(small only) {
-      margin-top: rem-calc(6);
-      font-size: rem-calc(12);
+
+  &__tel{
+    display: block;
+    font-size: rem-calc(24);
+    font-family: Oswald;
+    span{
+      font-size: rem-calc(10);
       font-weight: 400;
-      margin-bottom: rem-calc(24);
+      display: block;
+    }
+  }
+  &::after{
+    display: none !important;
+  }
+  &__time{
+    display: none;
+    @include breakpoint(small only) {
+
     }
   }
 }
@@ -143,58 +172,3 @@ category: Layout
         </div>
 ```
 */
-.l-offer {
-  // primary
-  &.is-color-primary {
-    background-image: none;
-    background-color: $color-primary;
-    padding: rem-calc(64) 0;
-    @include breakpoint(small only) {
-      padding: rem-calc(48) 0;
-    }
-    .c-heading {
-      color: $color-white;
-      margin-bottom: rem-calc(32);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
-      }
-    }
-    .l-offer__items {
-      margin-top: rem-calc(32);
-    }
-    .l-offer__box {
-      border: 1px solid $color-white;
-      height: 100%;
-      text-align: center;
-      padding: rem-calc(32) rem-calc(48);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(8);
-        height: inherit;
-        padding: rem-calc(24);
-      }
-    }
-    .l-offer__box-text {
-      font-size: rem-calc(14);
-      letter-spacing: 0.1em;
-      margin-bottom: rem-calc(20);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(12);
-      }
-    }
-    .l-offer__box-tel {
-      @include webfont-bold();
-      font-size: rem-calc(32);
-      line-height: 1;
-      i {
-        margin-right: rem-calc(8);
-      }
-      small {
-        display: block;
-        font-size: rem-calc(13);
-        letter-spacing: 0.1em;
-        font-weight: 400;
-        margin-top: rem-calc(8);
-      }
-    }
-  }
-}

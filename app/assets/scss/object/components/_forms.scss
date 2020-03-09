@@ -275,10 +275,43 @@ category: Forms
     @include breakpoint(small only) {
       padding: rem-calc(12) 0;
     }
+    &.is-full{
+      padding: 0;
+    }
     &.is-vertical-middle {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+    }
+    &-flex{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @include breakpoint(small only) {
+      }
+    }
+    &-select{
+      display: flex;
+      align-items: center;
+      @include breakpoint(medium down) {
+        width: 45%;
+        margin-top: rem-calc(10);
+        &:nth-of-type(2n){
+          width: 55%;
+        }
+      }
+      select{
+        width: rem-calc(72);
+        margin-right: rem-calc(5);
+      }
+      span{
+        margin-right: rem-calc(10);
+      }
+    }
+    & .title{
+      font-weight: bold;
+      display: block;
+      margin-top: rem-calc(20);
     }
   }
   //インプット
@@ -337,6 +370,7 @@ category: Forms
       }
     }
   }
+
   // 住所自動入力ボタン
   &__button {
     max-width: rem-calc(150);
@@ -361,5 +395,95 @@ category: Forms
     //横並び
     &.is-two-columns {
     }
+    & .is-submit{
+      &::after{
+        right: rem-calc(30);
+      }
+    }
+  }
+  &__name{
+    width: 100%;
+    background: $color-primary;
+    color: $color-white;
+    font-size: rem-calc(20);
+    letter-spacing: 0.1em;
+    line-height:29/20*1;
+    padding: rem-calc(5) 0 rem-calc(5) rem-calc(13);
+    margin-top: rem-calc(30);
+  }
+  &__number-box{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: rem-calc(40);
+    @include breakpoint(small only) {
+      justify-content: space-between;
+    }
+  }
+  &__number-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    padding-bottom: rem-calc(12);
+    border-bottom: 1px solid $color-gray;
+    @include breakpoint(small only) {
+      width: 45%;
+      margin-top: rem-calc(20);
+    }
+    &:nth-of-type(n + 4){
+      margin-top: rem-calc(21);
+      @include breakpoint(small only) {
+        margin-top: 20;
+      }
+    }
+    &:nth-of-type(3n - 1){
+      margin-right:rem-calc(42);
+      margin-left:rem-calc(42);
+      @include breakpoint(small only) {
+        margin-right:rem-calc(0);
+        margin-left:rem-calc(0);
+      }
+    }
+    span{
+      font-size: rem-calc(14);
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      line-height: 27/14*1;
+    }
+    input{
+      width: rem-calc(72);
+      height: rem-calc(60);
+      text-align: center;
+      font-size: rem-calc(20);
+      border-radius: $border-radius;
+      position: relative;
+      border: 1px solid $color-primary;
+
+      &:focus{
+        outline: none;
+      }
+      &:before {
+        position: absolute;
+        top: 8px;
+        right: 20px;
+        color: $color-primary;
+        font-size: 20px;
+        content: "▲";
+        pointer-events: none;
+      }
+      &:after {
+        position: absolute;
+        bottom: 8px;
+        right: 20px;
+        color: $color-primary;
+        font-size: 20px;
+        content: "▼";
+        pointer-events: none;
+      }
+    }
+  }
+  .textarea{
+    border-radius: $border-radius;
   }
 }

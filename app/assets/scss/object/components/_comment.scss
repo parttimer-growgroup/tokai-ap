@@ -1,0 +1,12 @@
+.c-comment{
+  &__top{
+    font-weight: bold;
+    strong{
+    }
+    span{
+      display: block;
+      font-size: rem-calc(26);
+      color: $color-primary;
+    }
+  }
+}

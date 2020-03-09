@@ -1,0 +1,19 @@
+.c-image{
+  margin-bottom: rem-calc(57);
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(57)/2;
+  }
+
+  &__img{
+    margin-top: rem-calc(50);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(50)/2;
+    }
+  }
+  &__text{
+    margin-top: rem-calc(28);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(28)/2;
+    }
+  }
+}

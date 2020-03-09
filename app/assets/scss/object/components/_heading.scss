@@ -34,12 +34,14 @@ category: Heading
 */
 
 .c-heading {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  font-weight: 700;
-  line-height: 1.5;
+  margin: 0;
   small {
     font-size: 0.65em;
+  }
+  &.is-span-color{
+    span{
+      color: $color-primary;
+    }
   }
 }
 
@@ -57,97 +59,86 @@ category: Heading
 <div class="c-heading is-xxs">フォントサイズ18PX</div>
 ```
 */
-.c-heading.is-xlg {
+/* h1 */
+.c-heading.is-line-bottom {
   text-align: center;
   color: $color-primary;
-  margin-bottom: rem-calc(24);
-  @include breakpoint(small only) {
-
-  }
-  span {
-    display: block;
-    @include webfont-bold();
-    font-size: rem-calc(42);
-    letter-spacing: 0.1em;
-    @include breakpoint(small only) {
-      font-size: rem-calc(42)*0.8;
-    }
-  }
-  small {
-    display: block;
-    font-weight: 700;
-    font-size: rem-calc(16);
-    letter-spacing: 0.1em;
-    @include breakpoint(small only) {
-      font-size: rem-calc(16)*0.8;
-    }
-  }
-}
-.c-heading.is-lg {
-  text-align: center;
-  color: $color-primary;
-  font-size: rem-calc(32);
-  letter-spacing: 0.1em;
-  margin-bottom: rem-calc(24);
-  @include breakpoint(small only) {
-    font-size: rem-calc(32)*0.8;
-    margin-bottom: rem-calc(24)/2;
-  }
-  small {
-    display: block;
-    @include webfont-bold();
-    font-size: rem-calc(14);
-    letter-spacing: 0.1em;
-    margin-top: rem-calc(6);
-    @include breakpoint(small only) {
-      font-size: rem-calc(14)*0.8;
-    }
-  }
-}
-.c-heading.is-md {
-  font-size: rem-calc(28);
-  text-align: center;
-  letter-spacing: 0.1em;
-  margin-bottom: rem-calc(20);
-  @include breakpoint(small only) {
-    font-size: rem-calc(28)*0.8;
-    margin-bottom: rem-calc(20)/2;
-  }
-  small {
-    display: block;
-    font-size: rem-calc(16);
-    letter-spacing: 0.1em;
-    color: $color-primary;
-    margin-top: rem-calc(6);
-    @include breakpoint(small only) {
-      font-size: rem-calc(16)*0.8;
-    }
-  }
-}
-
-.c-heading.is-sm {
+  padding-bottom: rem-calc(16);
+  position: relative;
   font-size: rem-calc(24);
-  letter-spacing: 0.1em;
+  line-height: 36/24*1;
+  letter-spacing: 0.05em;
+  color: $color-primary;
+  @include webfont;
+  &::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: rem-calc(41);
+    height: 2px;
+    background: $color-primary;
+  }
   @include breakpoint(small only) {
     font-size: rem-calc(24)*0.8;
   }
 }
-
-.c-heading.is-xs {
-  font-size: rem-calc(20);
+/* h1 */
+.c-heading.is-lg {
+  text-align: center;
+  font-size: rem-calc(26);
   letter-spacing: 0.1em;
-  margin-bottom: rem-calc(16);
+  line-height: 38/26*1;
   @include breakpoint(small only) {
-    font-size: rem-calc(20)*0.8;
-    margin-bottom: rem-calc(16)/2;
+    font-size: rem-calc(26)*0.8;
+  }
+  &.is-first-color{
+    color: $color-black;
+    margin-top: rem-calc(28);
+    font-weight: bold;
+
+    &:first-letter{
+      color: $color-primary;
+    }
   }
 }
-.c-heading.is-xxs {
-  font-size: rem-calc(18);
+/* h2 */
+.c-heading.is-md {
+  font-size: rem-calc(24);
+  text-align: center;
   letter-spacing: 0.1em;
-  margin-bottom: rem-calc(6);
+  line-height: 38/24*1;
   @include breakpoint(small only) {
-    font-size: rem-calc(18)*0.8;
+    font-size: rem-calc(28)*0.8;
+    margin-bottom: rem-calc(20)/2;
+  }
+}
+/* h3 */
+.c-heading.is-sm {
+  font-size: rem-calc(20);
+  letter-spacing: 0.1em;
+  line-height: 38/20*1;
+  @include breakpoint(small only) {
+    font-size: rem-calc(24)*0.8;
+  }
+}
+/* h4 */
+.c-heading.is-xs {
+  font-size: rem-calc(16);
+  letter-spacing: 0.1em;
+  line-height: 24/16*1;
+  @include breakpoint(small only) {
+    font-size: rem-calc(16)*0.8;
+  }
+}
+/* h5 */
+.c-heading.is-xxs {
+  font-size: rem-calc(14);
+  line-height: 18/14*1;
+  @include breakpoint(small only) {
+    font-size: rem-calc(14)*0.8;
   }
 }
 /*
@@ -267,6 +258,7 @@ category: Heading
       }
     }
   }
+
 }
 /*
 ---
@@ -450,7 +442,9 @@ category: Heading
 .c-heading.is-color-primary {
   color: $color-primary;
 }
-
+.c-heading .is-color-primary {
+  color: $color-primary;
+}
 // マージン調整
 .c-heading.is-top {
   margin-bottom: 0!important;
@@ -467,4 +461,11 @@ category: Heading
     left: 0;
     transform: translateX(0);
   }
+}
+
+.is-bg-denger{
+  margin: 0 rem-calc(10);
+  padding: rem-calc(4) rem-calc(31);
+  background: $color-accent;
+  color: $color-white;
 }
