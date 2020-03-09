@@ -16,7 +16,7 @@
   }
   @include breakpoint(1000 down) {
     width: 100%;
-    padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
+    padding: rem-calc(3) rem-calc(16) rem-calc(3) rem-calc(16);
     height: rem-calc(55);
     display: flex;
   }
@@ -74,18 +74,16 @@
       width: 100%;
       padding: 0;
       li{
-        margin-left: rem-calc(12);
-        margin-right: 32px;
+        display: block;
+        margin-left: rem-calc(42);
         @include breakpoint(1368 down) {
-          margin-right: 16px;
-          margin-left: rem-calc(6);
+          margin-left: rem-calc(21);
         }
         @include breakpoint(1200 down) {
-          margin-right: 8px;
-          margin-left: rem-calc(2)
+          margin-left: rem-calc(12)
         }
         @include breakpoint(1100 down) {
-          margin-right: 4px;
+          margin-left: rem-calc(6);
         }
         a {
           text-decoration: none;
@@ -101,7 +99,7 @@
             content: "";
             position: absolute;
             right: 0;
-            bottom: -38px;
+            bottom: -40px;
             left: 0;
             margin: auto;
             width: 0;
@@ -142,6 +140,7 @@
       letter-spacing: 0.05em;
       line-height: 39/26*1;
       color: $color-primary;
+      font-family: 'Oswald', sans-serif;;
       @include breakpoint(1368 down) {
         font-size: rem-calc(23);
       }
@@ -155,6 +154,8 @@
     small{
       display: block;
       text-align: center;
+      font-weight: 400;
+      font-size: rem-calc(10);
     }
   }
   &__button{
@@ -265,18 +266,16 @@
         width: 100%;
         padding: 0;
         li{
-          margin-left: rem-calc(12);
-          margin-right: 32px;
+          display: block;
+          margin-left: rem-calc(42);
           @include breakpoint(1368 down) {
-            margin-right: 16px;
-            margin-left: rem-calc(6);
+            margin-left: rem-calc(21);
           }
           @include breakpoint(1200 down) {
-            margin-right: 8px;
-            margin-left: rem-calc(2)
+            margin-left: rem-calc(12)
           }
           @include breakpoint(1100 down) {
-            margin-right: 4px;
+            margin-left: rem-calc(6);
           }
           a {
             text-decoration: none;
@@ -293,7 +292,7 @@
               content: "";
               position: absolute;
               right: 0;
-              bottom: -38px;
+              bottom: -40px;
               left: 0;
               margin: auto;
               width: 0;
@@ -320,3 +319,5 @@
     }
   }
 }
+
+

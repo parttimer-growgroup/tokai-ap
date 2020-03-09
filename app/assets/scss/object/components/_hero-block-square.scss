@@ -87,6 +87,14 @@ category: SpecialComponents
       overflow: hidden;
     }
   }
+  &__inner{
+    h3{
+      font-size: rem-calc(26) !important;
+      @include breakpoint(small only) {
+        font-size: rem-calc(20) !important;
+      }
+    }
+  }
   &__image {
     position: absolute;
     left: 0;

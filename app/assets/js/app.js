@@ -232,23 +232,11 @@ class App {
         }, 100);
         sr.reveal(".c-main-visual__title-img", {delay: 1200, scale: 1, duration: 2000, origin: 'bottom', distance: '50px',}, 100);
 
-        var blocks01 = $(".c-concept__txtbox,.c-links__box");
+        var blocks01 = $(".c-concept__txtbox,.c-links__box,.c-hero-block-square");
         domEach(blocks01, function (key, item) {
-            sr.reveal(item, {scale: 1,duration: 700,delay: 700}, 200);
-            sr.reveal(item.children[1], {delay: 800, scale: 1,origin: 'bottom', distance: '20px'}, 300);
-            sr.reveal(item.children[2], {delay: 900, scale: 1,origin: 'bottom', distance: '20px'}, 300);
-        });
-        var blocks02 = $(".c-links__box");
-        domEach(blocks02, function (key, item) {
-            sr.reveal(item, {scale: 1,duration: 700,delay: 700}, 200);
-            sr.reveal(item.children[1], {delay: 800, scale: 1,origin: 'bottom', distance: '20px'}, 300);
-            sr.reveal(item.children[2], {delay: 900, scale: 1,origin: 'bottom', distance: '20px'}, 300);
-        });
-        var blocks03 = $(".hero-block-square");
-        domEach(blocks03, function (key, item) {
-            sr.reveal(item, {scale: 1,duration: 700,delay: 700}, 200);
-            sr.reveal(item.children[1], {delay: 800, scale: 1,origin: 'bottom', distance: '20px'}, 300);
-            sr.reveal(item.children[2], {delay: 900, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+            sr.reveal(item, {scale: 1,duration: 300,delay: 100}, 200);
+            sr.reveal(item.children[1], {delay: 300, scale: 1,origin: 'bottom', distance: '20px'}, 300);
+            sr.reveal(item.children[2], {delay: 400, scale: 1,origin: 'bottom', distance: '20px'}, 300);
         });
         // var blocks01 = $(".c-concept__txtbox");
         // domEach(blocks01, function (key, item) {

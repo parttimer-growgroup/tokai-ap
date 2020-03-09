@@ -24,6 +24,7 @@ category: Buttons
   transition: .3s all;
   font-weight: 700;
   font-size: rem-calc(16);
+  line-height: 24/16*1;
   // *アイコン
   &:after {
     content: "\f105";
@@ -62,6 +63,7 @@ category: Buttons
   }
   &.is-tel{
     pointer-events: none;
+    border: none;
     @include breakpoint(small only) {
       pointer-events: auto;
     }
@@ -78,6 +80,9 @@ category: Buttons
         color: $color-white;
         transition: .3s all;
       }
+    }
+    &::after{
+      display: none;
     }
   }
   &.is-icon{

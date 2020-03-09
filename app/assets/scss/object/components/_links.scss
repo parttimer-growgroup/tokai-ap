@@ -83,6 +83,9 @@
       font-weight: bold;
       letter-spacing: 0.1em;
       line-height: 38/26*1;
+      &.is-title-en{
+        font-family: Oswald;
+      }
       &.is-line-bottom{
         padding-bottom: rem-calc(15);
         position: relative;

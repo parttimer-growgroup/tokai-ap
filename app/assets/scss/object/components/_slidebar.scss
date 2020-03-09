@@ -228,9 +228,11 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       span{
         font-size: rem-calc(26);
         display: block;
+        font-family: 'Oswald';
       }
       small{
         font-size: rem-calc(10);
+        font-weight: 400;
       }
     }
   }

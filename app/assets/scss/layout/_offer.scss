@@ -56,6 +56,7 @@ category: Layout
     &--box{
       width: rem-calc(268);
       height: rem-calc(137);
+      padding: 0 rem-calc(8) !important;
       @include breakpoint(850 down) {
         margin: 10px auto;
         width: 100%;
@@ -110,6 +111,7 @@ category: Layout
       line-height: 1;
       background: $color-white;
       color: $color-primary;
+      border: none;
       @include breakpoint(small only) {
         font-size: rem-calc(28);
       }
@@ -120,13 +122,17 @@ category: Layout
   }
 
   &__tel{
-    strong{
-      display: block;
-      font-size: rem-calc(16);
-    }
+    display: block;
+    font-size: rem-calc(24);
+    font-family: Oswald;
     span{
       font-size: rem-calc(10);
+      font-weight: 400;
+      display: block;
     }
+  }
+  &::after{
+    display: none !important;
   }
   &__time{
     display: none;
