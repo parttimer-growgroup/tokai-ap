@@ -4,6 +4,9 @@
 
 // 英語アクセントフォント -> oswald
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Serif+JP&display=swap');
 // regular400
 @mixin webfont() {
   font-family: 'Oswald', sans-serif;
@@ -14,5 +17,17 @@
 @mixin webfont-bold() {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
+  line-height: 1.2;
+}
+
+@mixin webfont-lato() {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+@mixin webfont--lato-bold() {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   line-height: 1.2;
 }

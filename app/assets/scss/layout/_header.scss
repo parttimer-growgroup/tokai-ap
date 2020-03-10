@@ -17,7 +17,7 @@
   @include breakpoint(1000 down) {
     width: 100%;
     padding: rem-calc(3) rem-calc(16) rem-calc(3) rem-calc(16);
-    height: rem-calc(55);
+    height: rem-calc(70);
     display: flex;
   }
   &__inner{
@@ -32,11 +32,8 @@
   &_heading{
     &.is-logo-white{}
     &.is-logo-color{
-      width: rem-calc(222);
-      height: rem-calc(44);
     }
     @include breakpoint(1000 down) {
-      width: rem-calc(148);
       margin: 0;
       display: flex;
       justify-content: center;
@@ -46,9 +43,12 @@
       }
     }
   }
+  &_heading{
+    width: rem-calc(222);
+  }
   &__heading {
     margin: 0;
-    width: rem-calc(175);
+    width: rem-calc(111);
     flex-shrink: 0;
     @include breakpoint(1000 down) {
       width: rem-calc(148);
@@ -76,6 +76,9 @@
       li{
         display: block;
         margin-left: rem-calc(42);
+        &.is-header__ml{
+          margin-left: rem-calc(21);
+        }
         @include breakpoint(1368 down) {
           margin-left: rem-calc(21);
         }
@@ -108,7 +111,7 @@
             opacity: 0;
             transition: .3s all;
             @include breakpoint(1100 down) {
-              bottom: -23px;
+              bottom: -30px;
             }
           }
           //*hover
@@ -208,6 +211,8 @@
   &.is-top{
     background: transparent;
     position: absolute;
+    @include breakpoint(small only) {
+    }
     .l-header__tel{
       span{
         color: $color-white;
@@ -226,7 +231,7 @@
       position: fixed;
       background: $color-white;
       @include breakpoint(small only) {
-        position: relative;
+        display: none;
       }
       .l-header_heading.is-logo-white{
         display: none;
@@ -268,6 +273,9 @@
         li{
           display: block;
           margin-left: rem-calc(42);
+          &.is-header__ml{
+            margin-left: rem-calc(21);
+          }
           @include breakpoint(1368 down) {
             margin-left: rem-calc(21);
           }

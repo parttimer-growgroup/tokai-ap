@@ -44,14 +44,14 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     top: 0px;
     text-align: center;
     font-size: rem-calc(12);
-    z-index: 9999;
+    z-index: 99999999;
     text-decoration: none;
-    padding: rem-calc(10) rem-calc(4) rem-calc(4);
+    padding: rem-calc(20) rem-calc(0) rem-calc(4);
     background-color: $color-primary;
     line-height: 1;
     color: $color-white;
-    width: rem-calc(55);
-    height: rem-calc(55);
+    width: rem-calc(70);
+    height: rem-calc(70);
     &:active,
     &:hover {
       opacity: 1!important;
@@ -60,24 +60,27 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     &__line {
       > span {
         display: block;
-        height: 4px;
+        height: 2px;
         background: $color-white;
-        width: 100%;
+        width: 24px;
         max-width: 60%;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
         transition: all ease .2s;
         &:last-child {
-          margin-bottom: 3px;
+          margin-bottom: 6px;
         }
       }
     }
     // メニューテキスト
     &__text {
+      @include webfont--lato-bold() ;
       transition: all ease .2s;
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: 0.4px;
+      font-weight: bold;
+      letter-spacing: 0.1em;
       @include webfont();
       &.is-close {
         display: none;
@@ -263,14 +266,14 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
   .is-slidebar-active {
     cursor: pointer;
     .c-slidebar-button {
-      padding-top: rem-calc(6);
+      padding-top: rem-calc(20);
       &__line {
         > span {
           &:nth-child(1){
-            transform: rotate(-45deg) translateY(11px) translateX(-9px);
+            transform: translateY(10px) rotate(-45deg);
           }
           &:nth-child(2){
-            transform: rotate(45deg) translateY(3px) translateX(5px);
+            transform: translateY(2px) rotate(45deg);
           }
           &:nth-child(3){
             display: none;
@@ -278,6 +281,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         }
       }
       &__text {
+        @include webfont--lato-bold() ;
+
         &.is-close {
           display: block;
           margin-top: rem-calc(20);
@@ -318,7 +323,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       visibility: visible;
       &.is-top-to-bottom {
         opacity: 1;
-        z-index: 999;
+        z-index: 9999999;
       }
     }
   }

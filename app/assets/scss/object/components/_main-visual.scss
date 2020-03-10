@@ -115,6 +115,9 @@ category: Components
 
 .c-main-visual {
   width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  max-height: 1080px;
   position: relative;
 
   &__image {
@@ -153,6 +156,7 @@ category: Components
       justify-content: center;
       align-items: center;
       margin: auto;
+      height: 30%;
     }
   }
   &__title{

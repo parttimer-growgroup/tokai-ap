@@ -13,17 +13,20 @@
  *
  */
 import  $ from "./jquery-shim.js"
-var mainHeight = $('.c-main-visual').height();
+
+if ($('.c-main-visual').length >= 1) {
+    var mainHeight = document.getElementById('mainvisual').clientHeight;
+}
+
 var defaultOptions = {
     selector: '.js-fixedheader', // 実行するセレクタ
     offset: mainHeight, // 実行するオフセットピクセル数,
     cssClass: ".l-global-navigation", // CSSが定義されているクラス
     activeClass: "is-fixed", // 有効な時に付与するクラス
     mobile: false // モバイル時にどう動作するか
-}
+};
 
 export default class Fixedheader {
-
     constructor(options){
         this.options = $.extend(defaultOptions, options);
         this.init();
