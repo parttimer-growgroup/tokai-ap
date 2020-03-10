@@ -144,10 +144,9 @@ category: SpecialComponents
   &__content {
     width: 50%;
     margin-left: auto;
-    padding: rem-calc(56) 0 rem-calc(56) rem-calc(64);
+    padding:rem-calc(40) 0 0 rem-calc(25);
     display: flex;
     min-height: rem-calc(400);
-    align-items: center;
     @include breakpoint(small only) {
       width: 100%;
       padding: rem-calc(12) 0 rem-calc(24) 0!important;
@@ -162,7 +161,7 @@ category: SpecialComponents
   }
   &__number{
     color: $color-primary;
-    margin-bottom: rem-calc(64);
+    margin-bottom: rem-calc(48);
     font-size: rem-calc(24);
     letter-spacing: 0.05em;
     line-height: 36/24*1;

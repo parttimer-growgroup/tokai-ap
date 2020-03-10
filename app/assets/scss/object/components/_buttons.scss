@@ -35,7 +35,7 @@ category: Buttons
     right: rem-calc(16);
     transform: translateY(-50%);
     font-weight: 400;
-    transition: .3s all;
+    transition: .3s;
   }
   &:before{
     content: '';
